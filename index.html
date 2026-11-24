@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thư Viện Số Cá Nhân - Bùi Mạnh Trường</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #ffe7ef, #f4eaff);
+    color: #202039;
+}
+
+header {
+    width: 92%;
+    margin: 25px auto;
+    padding: 20px 25px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #ffd1df;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 8px 25px #eacbd9;
+}
+
+.logo {
+    color: #ed286b;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo small {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: #34344d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ed286b;
+}
+
+.container {
+    width: 92%;
+    margin: 35px auto;
+    padding: 50px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 25px;
+    box-shadow: 0 8px 30px #ead1df;
+}
+
+.tag {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ffeaf1;
+    border: 1px solid #ff9fbd;
+    border-radius: 30px;
+    color: #ed286b;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+h1 {
+    font-size: clamp(34px, 6vw, 60px);
+    margin: 28px 0;
+    line-height: 1.2;
+}
+
+h1 span {
+    color: #ed286b;
+}
+
+.info {
+    padding: 25px;
+    border: 1px solid #ffbfd3;
+    border-radius: 18px;
+    background: #fff9fc;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+.info strong {
+    color: #ed286b;
+}
+
+.description {
+    color: #55556b;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    max-width: 850px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 23px;
+    background: #ed286b;
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #bd1550;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: white;
+    color: #ed286b;
+    border: 1px solid #ed286b;
+}
+
+.section-title {
+    color: #ed286b;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 18px;
+    background: #fff8fb;
+    border: 1px solid #ffd1df;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #edcfdd;
+}
+
+.card h3 {
+    color: #d92364;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ed286b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    line-height: 1.8;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 1px solid #ffb7cf;
+    border-radius: 12px;
+    font-family: Arial;
+    font-size: 15px;
+    resize: vertical;
+}
+
+@media(max-width: 650px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .container {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🌷 THƯ VIỆN SỐ CÁ NHÂN
+        <small>BÙI MẠNH TRƯỜNG | SINH VIÊN</small>
+    </div>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#slides">8 Slide Học Tập</a>
+        <a href="#notes">Sổ Tay Ghi Chú</a>
+        <a href="#documents">Tài Liệu</a>
+    </nav>
+</header>
+
+<!-- TRANG CHỦ -->
+<section class="container" id="home">
+
+    <div class="tag">
+        🌷 KHÔNG GIAN LƯU TRỮ TRI THỨC CÔNG NGHỆ THÔNG TIN 4.0
+    </div>
+
+    <h1>
+        THƯ VIỆN SỐ <span>CÁ NHÂN</span>
+    </h1>
+
+    <div class="info">
+        <p><strong>👨‍🎓 SINH VIÊN THỰC HIỆN:</strong> BÙI MẠNH TRƯỜNG</p>
+        <p><strong>📌 MÃ SỐ SINH VIÊN:</strong> [Nhập mã sinh viên]</p>
+        <p><strong>💻 CHUYÊN NGÀNH:</strong> Công nghệ thông tin</p>
+    </div>
+
+    <p class="description">
+        Chào mừng bạn đến với thư viện số cá nhân của Bùi Mạnh Trường.
+        Đây là nơi tổng hợp kiến thức, bài học và tài liệu học tập
+        xuyên suốt 8 chuyên đề Công nghệ Thông tin 4.0.
+        Cùng khám phá thế giới công nghệ, trí tuệ nhân tạo,
+        điện toán đám mây và tư duy lập trình.
+    </p>
+
+    <a href="#slides" class="btn">🌸 Khám Phá 8 Slide</a>
+    <a href="#notes" class="btn btn-outline">✍️ Sổ Tay Ghi Chú</a>
+
+</section>
+
+<!-- 8 CHỦ ĐỀ -->
+<section class="container" id="slides">
+
+    <h2 class="section-title">📚 8 CHỦ ĐỀ HỌC TẬP</h2>
+
+    <p class="description">
+        Tổng hợp các kiến thức quan trọng trong môn Công nghệ Thông tin 4.0.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>01. Phần cứng máy tính</h3>
+            <p>Tìm hiểu CPU, RAM, ổ cứng và các thiết bị máy tính.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+        <div class="card">
+            <h3>02. Hệ điều hành</h3>
+            <p>Tìm hiểu Windows, Linux và cách quản lý máy tính.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+        <div class="card">
+            <h3>03. Mạng Internet</h3>
+            <p>Kiến thức về Internet, mạng máy tính và kết nối.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+        <div class="card">
+            <h3>04. Điện toán đám mây</h3>
+            <p>Tìm hiểu lưu trữ và xử lý dữ liệu trên nền tảng đám mây.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+        <div class="card">
+            <h3>05. Dữ liệu lớn Big Data</h3>
+            <p>Khám phá dữ liệu lớn và ứng dụng trong thực tế.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+        <div class="card">
+            <h3>06. Trí tuệ nhân tạo AI</h3>
+            <p>Tìm hiểu AI, ChatGPT và các ứng dụng thông minh.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+        <div class="card">
+            <h3>07. Lập trình</h3>
+            <p>Làm quen với HTML, CSS, C++ và tư duy lập trình.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+        <div class="card">
+            <h3>08. An toàn thông tin</h3>
+            <p>Bảo mật tài khoản và bảo vệ dữ liệu cá nhân.</p>
+            <a href="#documents">Khám phá →</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- SỔ TAY -->
+<section class="container" id="notes">
+
+    <h2 class="section-title">✍️ SỔ TAY GHI CHÚ</h2>
+
+    <p class="description">
+        Khu vực ghi lại kiến thức, ý tưởng và những điều quan trọng
+        trong quá trình học tập.
+    </p>
+
+    <textarea id="note" placeholder="Nhập ghi chú học tập của bạn tại đây..."></textarea>
+
+    <br><br>
+
+    <button class="btn" onclick="saveNote()">💾 Lưu ghi chú</button>
+
+    <p id="message"></p>
+
+</section>
+
+<!-- TÀI LIỆU -->
+<section class="container" id="documents">
+
+    <h2 class="section-title">📂 TÀI LIỆU THAM KHẢO</h2>
+
+    <p class="description">
+        Tổng hợp các nguồn tài liệu hỗ trợ học tập và nghiên cứu.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🌐 W3Schools</h3>
+            <p>Học HTML, CSS và JavaScript cơ bản.</p>
+            <a href="https://www.w3schools.com/" target="_blank">Truy cập →</a>
+        </div>
+
+        <div class="card">
+            <h3>💻 GitHub</h3>
+            <p>Nền tảng lưu trữ và quản lý mã nguồn.</p>
+            <a href="https://github.com/" target="_blank">Truy cập →</a>
+        </div>
+
+        <div class="card">
+            <h3>🤖 ChatGPT</h3>
+            <p>Hỗ trợ học tập và tìm hiểu công nghệ.</p>
+            <a href="https://chatgpt.com/" target="_blank">Truy cập →</a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    🌷 THƯ VIỆN SỐ CÁ NHÂN - BÙI MẠNH TRƯỜNG
+    <br>
+    Công nghệ Thông tin 4.0
+    <br>
+    © 2026 - Personal Digital Library
+</footer>
+
+<script>
+function saveNote() {
+    const note = document.getElementById("note").value;
+
+    try {
+        localStorage.setItem("ghiChuCaNhan", note);
+        document.getElementById("message").innerText =
+            "Đã lưu ghi chú thành công!";
+    } catch (error) {
+        document.getElementById("message").innerText =
+            "Không thể lưu ghi chú trên trình duyệt này.";
+    }
+}
+
+window.onload = function() {
+    document.getElementById("note").value =
+        localStorage.getItem("ghiChuCaNhan") || "";
+};
+</script>
+
+</body>
+</html>
