@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Thư Viện Số Cá Nhân - Bùi Mạnh Trường</title>
 
 <style>
@@ -16,15 +17,16 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(120deg, #ffe7ef, #f4eaff);
+    background: linear-gradient(120deg, #ffe5ef, #f2eaff);
     color: #202039;
 }
 
+/* THANH MENU */
 header {
     width: 92%;
     margin: 25px auto;
     padding: 20px 25px;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     border: 1px solid #ffd1df;
     border-radius: 20px;
     display: flex;
@@ -65,15 +67,17 @@ nav a:hover {
     color: #ed286b;
 }
 
+/* KHUNG NỘI DUNG */
 .container {
     width: 92%;
     margin: 35px auto;
     padding: 50px;
-    background: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.95);
     border-radius: 25px;
     box-shadow: 0 8px 30px #ead1df;
 }
 
+/* TRANG CHỦ */
 .tag {
     display: inline-block;
     padding: 12px 20px;
@@ -100,7 +104,7 @@ h1 span {
     border: 1px solid #ffbfd3;
     border-radius: 18px;
     background: #fff9fc;
-    line-height: 2;
+    line-height: 2.2;
     margin-bottom: 25px;
 }
 
@@ -112,9 +116,10 @@ h1 span {
     color: #55556b;
     line-height: 1.9;
     margin-bottom: 25px;
-    max-width: 850px;
+    max-width: 900px;
 }
 
+/* NÚT BẤM */
 .btn {
     display: inline-block;
     padding: 15px 23px;
@@ -124,6 +129,8 @@ h1 span {
     text-decoration: none;
     font-weight: bold;
     margin: 5px;
+    border: none;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -138,12 +145,14 @@ h1 span {
     border: 1px solid #ed286b;
 }
 
+/* TIÊU ĐỀ */
 .section-title {
     color: #ed286b;
     font-size: 30px;
     margin-bottom: 15px;
 }
 
+/* CÁC THẺ NỘI DUNG */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -183,16 +192,10 @@ h1 span {
     font-weight: bold;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-    line-height: 1.8;
-}
-
+/* SỔ TAY */
 textarea {
     width: 100%;
-    min-height: 150px;
+    min-height: 160px;
     padding: 15px;
     border: 1px solid #ffb7cf;
     border-radius: 12px;
@@ -201,6 +204,20 @@ textarea {
     resize: vertical;
 }
 
+#message {
+    color: #15945a;
+    margin-top: 12px;
+}
+
+/* CHÂN TRANG */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* ĐIỆN THOẠI */
 @media(max-width: 650px) {
     header {
         justify-content: center;
@@ -208,6 +225,7 @@ textarea {
 
     nav {
         justify-content: center;
+        gap: 12px;
     }
 
     .container {
@@ -219,10 +237,11 @@ textarea {
 
 <body>
 
+<!-- THANH ĐIỀU HƯỚNG -->
 <header>
     <div class="logo">
         🌷 THƯ VIỆN SỐ CÁ NHÂN
-        <small>BÙI MẠNH TRƯỜNG | SINH VIÊN</small>
+        <small>BÙI MẠNH TRƯỜNG | PK05092</small>
     </div>
 
     <nav>
@@ -245,31 +264,49 @@ textarea {
     </h1>
 
     <div class="info">
-        <p><strong>👨‍🎓 SINH VIÊN THỰC HIỆN:</strong> BÙI MẠNH TRƯỜNG</p>
-        <p><strong>📌 MÃ SỐ SINH VIÊN:</strong> [Nhập mã sinh viên]</p>
-        <p><strong>💻 CHUYÊN NGÀNH:</strong> Công nghệ thông tin</p>
+
+        <p>
+            👨‍🎓 <strong>SINH VIÊN THỰC HIỆN:</strong>
+            BÙI MẠNH TRƯỜNG
+        </p>
+
+        <p>
+            📌 <strong>MÃ SỐ SINH VIÊN:</strong>
+            PK05092
+        </p>
+
+        <p>
+            💻 <strong>CHUYÊN NGÀNH:</strong>
+            Lập trình Web
+        </p>
+
     </div>
 
     <p class="description">
         Chào mừng bạn đến với thư viện số cá nhân của Bùi Mạnh Trường.
-        Đây là nơi tổng hợp kiến thức, bài học và tài liệu học tập
-        xuyên suốt 8 chuyên đề Công nghệ Thông tin 4.0.
+        Đây là nơi tổng hợp hệ thống kiến thức, bài học và tài liệu
+        học tập xuyên suốt 8 chuyên đề Công nghệ Thông tin 4.0.
         Cùng khám phá thế giới công nghệ, trí tuệ nhân tạo,
         điện toán đám mây và tư duy lập trình.
     </p>
 
-    <a href="#slides" class="btn">🌸 Khám Phá 8 Slide</a>
-    <a href="#notes" class="btn btn-outline">✍️ Sổ Tay Ghi Chú</a>
+    <a href="#slides" class="btn">
+        🌸 Khám Phá 8 Slide
+    </a>
+
+    <a href="#notes" class="btn btn-outline">
+        ✍️ Sổ Tay Ghi Chú
+    </a>
 
 </section>
 
-<!-- 8 CHỦ ĐỀ -->
+<!-- 8 CHỦ ĐỀ HỌC TẬP -->
 <section class="container" id="slides">
 
     <h2 class="section-title">📚 8 CHỦ ĐỀ HỌC TẬP</h2>
 
     <p class="description">
-        Tổng hợp các kiến thức quan trọng trong môn Công nghệ Thông tin 4.0.
+        Tổng hợp kiến thức quan trọng trong môn Công nghệ Thông tin 4.0.
     </p>
 
     <div class="grid">
@@ -311,21 +348,21 @@ textarea {
         </div>
 
         <div class="card">
-            <h3>07. Lập trình</h3>
-            <p>Làm quen với HTML, CSS, C++ và tư duy lập trình.</p>
+            <h3>07. Lập trình Web</h3>
+            <p>Làm quen HTML, CSS, JavaScript và xây dựng website.</p>
             <a href="#documents">Khám phá →</a>
         </div>
 
         <div class="card">
             <h3>08. An toàn thông tin</h3>
-            <p>Bảo mật tài khoản và bảo vệ dữ liệu cá nhân.</p>
+            <p>Tìm hiểu bảo mật tài khoản và bảo vệ dữ liệu cá nhân.</p>
             <a href="#documents">Khám phá →</a>
         </div>
 
     </div>
 </section>
 
-<!-- SỔ TAY -->
+<!-- SỔ TAY GHI CHÚ -->
 <section class="container" id="notes">
 
     <h2 class="section-title">✍️ SỔ TAY GHI CHÚ</h2>
@@ -335,17 +372,24 @@ textarea {
         trong quá trình học tập.
     </p>
 
-    <textarea id="note" placeholder="Nhập ghi chú học tập của bạn tại đây..."></textarea>
+    <textarea id="note"
+        placeholder="Nhập ghi chú học tập của bạn tại đây..."></textarea>
 
     <br><br>
 
-    <button class="btn" onclick="saveNote()">💾 Lưu ghi chú</button>
+    <button class="btn" onclick="saveNote()">
+        💾 Lưu ghi chú
+    </button>
+
+    <button class="btn btn-outline" onclick="clearNote()">
+        🗑️ Xóa ghi chú
+    </button>
 
     <p id="message"></p>
 
 </section>
 
-<!-- TÀI LIỆU -->
+<!-- TÀI LIỆU THAM KHẢO -->
 <section class="container" id="documents">
 
     <h2 class="section-title">📂 TÀI LIỆU THAM KHẢO</h2>
@@ -359,50 +403,89 @@ textarea {
         <div class="card">
             <h3>🌐 W3Schools</h3>
             <p>Học HTML, CSS và JavaScript cơ bản.</p>
-            <a href="https://www.w3schools.com/" target="_blank">Truy cập →</a>
+            <a href="https://www.w3schools.com/" target="_blank">
+                Truy cập →
+            </a>
         </div>
 
         <div class="card">
             <h3>💻 GitHub</h3>
             <p>Nền tảng lưu trữ và quản lý mã nguồn.</p>
-            <a href="https://github.com/" target="_blank">Truy cập →</a>
+            <a href="https://github.com/" target="_blank">
+                Truy cập →
+            </a>
         </div>
 
         <div class="card">
             <h3>🤖 ChatGPT</h3>
             <p>Hỗ trợ học tập và tìm hiểu công nghệ.</p>
-            <a href="https://chatgpt.com/" target="_blank">Truy cập →</a>
+            <a href="https://chatgpt.com/" target="_blank">
+                Truy cập →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Google</h3>
+            <p>Tìm kiếm kiến thức và tài liệu học tập.</p>
+            <a href="https://www.google.com/" target="_blank">
+                Truy cập →
+            </a>
         </div>
 
     </div>
+
 </section>
 
+<!-- CHÂN TRANG -->
 <footer>
     🌷 THƯ VIỆN SỐ CÁ NHÂN - BÙI MẠNH TRƯỜNG
+    <br>
+    MSSV: PK05092 | Chuyên ngành: Lập trình Web
     <br>
     Công nghệ Thông tin 4.0
     <br>
     © 2026 - Personal Digital Library
 </footer>
 
+<!-- CHỨC NĂNG GHI CHÚ -->
 <script>
+
 function saveNote() {
+
     const note = document.getElementById("note").value;
 
     try {
         localStorage.setItem("ghiChuCaNhan", note);
+
         document.getElementById("message").innerText =
             "Đã lưu ghi chú thành công!";
+
     } catch (error) {
+
         document.getElementById("message").innerText =
             "Không thể lưu ghi chú trên trình duyệt này.";
+
     }
 }
 
+function clearNote() {
+
+    document.getElementById("note").value = "";
+
+    localStorage.removeItem("ghiChuCaNhan");
+
+    document.getElementById("message").innerText =
+        "Đã xóa ghi chú!";
+
+}
+
 window.onload = function() {
+
     document.getElementById("note").value =
         localStorage.getItem("ghiChuCaNhan") || "";
+
 };
+
 </script>
 
 </body>
