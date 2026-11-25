@@ -4,260 +4,1116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thư viện số - Bùi Mạnh Trường</title>
+<title>Thư viện số cá nhân - Bùi Mạnh Trường</title>
 
 <style>
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:#fff0f6;color:#252944;line-height:1.7}
-header{background:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;box-shadow:0 3px 15px #ddd}
-.logo{font-size:20px;font-weight:bold;color:#e72d70}
-nav{display:flex;gap:8px;flex-wrap:wrap}
-button{cursor:pointer;border:0;border-radius:9px;padding:10px 15px;background:#fce3ed;color:#ad2455;font-weight:bold}
-button:hover,button.active{background:#e72d70;color:white}
-main{max-width:1100px;margin:30px auto;padding:0 18px}
-.hero,.section{background:white;border-radius:18px;padding:28px;margin-bottom:22px;box-shadow:0 5px 20px #e8cbd8}
-.hero h1{font-size:42px;color:#e72d70;line-height:1.2}
-.info{background:#fff5f9;border:1px solid #f5bfd4;border-radius:12px;padding:18px}
-.info b{color:#d92b68}
-h2{color:#d92b68}
-h3{color:#087d91;margin-top:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.card{padding:18px;border:1px solid #f4c8da;border-radius:13px;background:#fffafd}
-.card h3{margin-top:0}
-.lesson{display:none}
-.lesson.show{display:block}
-.callout{background:#eff8fb;border-left:4px solid #16879a;padding:14px;margin:15px 0;border-radius:8px}
-.example{background:#fff7e9;border-left:4px solid #e5a13b;padding:14px;margin:15px 0}
-.question{padding:15px;border:1px solid #ddd;border-radius:12px;margin:12px 0}
-.question label{display:block;padding:5px}
-.result{font-weight:bold}
-footer{text-align:center;padding:25px;color:#777}
-@media(max-width:600px){.hero h1{font-size:32px}header{justify-content:center}}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff7f7;
+    color: #333;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #e76b70, #f5a0a3);
+    color: white;
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.student-info {
+    text-align: right;
+    font-size: 14px;
+}
+
+nav {
+    background: white;
+    padding: 13px 7%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 2px 8px #00000012;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    color: #bd5158;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #76272c;
+}
+
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.hero {
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 3px 12px #0000000d;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    color: #d85e66;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #666;
+}
+
+.section-title {
+    color: #d85e66;
+    margin: 30px 0 18px;
+    font-size: 24px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.lesson-card {
+    background: white;
+    border-radius: 13px;
+    padding: 20px;
+    border: 1px solid #f1dddd;
+    box-shadow: 0 3px 10px #00000008;
+    transition: 0.2s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px #00000012;
+}
+
+.lesson-card h3 {
+    color: #d85e66;
+    margin-bottom: 8px;
+}
+
+.lesson-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #e76b70;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #c94e58;
+}
+
+.lesson-detail {
+    display: none;
+    background: white;
+    border-radius: 13px;
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.lesson-detail h2 {
+    color: #d85e66;
+    margin-bottom: 15px;
+}
+
+.lesson-detail h3 {
+    color: #bd5158;
+    margin: 18px 0 8px;
+}
+
+.lesson-detail p,
+.lesson-detail li {
+    margin-bottom: 8px;
+}
+
+.lesson-detail ul {
+    padding-left: 25px;
+}
+
+.highlight {
+    background: #fff0f0;
+    padding: 15px;
+    border-left: 4px solid #e76b70;
+    border-radius: 7px;
+    margin: 15px 0;
+}
+
+.quiz-question {
+    background: #fff8f8;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #f2dddd;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 7px 0;
+    cursor: pointer;
+}
+
+.note-box,
+.reference-box,
+.about-box {
+    background: white;
+    padding: 25px;
+    border-radius: 13px;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.note-box h2,
+.reference-box h2,
+.about-box h2 {
+    color: #d85e66;
+    margin-bottom: 12px;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    background: #777;
+}
+
+.secondary-button:hover {
+    background: #555;
+}
+
+#noteStatus {
+    margin-top: 12px;
+    color: #25834c;
+    font-weight: bold;
+}
+
+.reference-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.reference-item {
+    background: #fff8f8;
+    border: 1px solid #f1dddd;
+    padding: 17px;
+    border-radius: 10px;
+}
+
+.reference-item h3 {
+    color: #bd5158;
+    margin-bottom: 8px;
+}
+
+.reference-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.reference-item a {
+    color: #2466bd;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.reference-item a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 45px;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    background: #d85e66;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 650px) {
+    header {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .student-info {
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 23px;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">🌸 THƯ VIỆN SỐ CÁ NHÂN</div>
-<nav id="menu"></nav>
+    <div class="logo">📚 THƯ VIỆN SỐ CÁ NHÂN</div>
+
+    <div class="student-info">
+        <strong>BÙI MẠNH TRƯỜNG</strong><br>
+        MSSV: PK05092<br>
+        Ngành học: Lập trình Web
+    </div>
 </header>
 
-<main>
+<nav>
+    <a href="#home">Trang chủ</a>
+    <a href="#lessons">Bài học</a>
+    <a href="#notes">Ghi chú</a>
+    <a href="#references">Tài liệu tham khảo</a>
+    <a href="#about">Giới thiệu</a>
+</nav>
 
-<section class="hero">
-<p>📚 KHÔNG GIAN HỌC TẬP CÔNG NGHỆ THÔNG TIN 4.0</p>
-<h1>THƯ VIỆN SỐ CÁ NHÂN</h1>
-<div class="info">
-<p>👨‍🎓 <b>Sinh viên:</b> Bùi Mạnh Trường</p>
-<p>📌 <b>Mã số sinh viên:</b> PK05092</p>
-<p>💻 <b>Chuyên ngành:</b> Lập trình Web</p>
+<div class="container">
+
+<section class="hero" id="home">
+    <h1>CHÀO MỪNG ĐẾN VỚI THƯ VIỆN SỐ CÁ NHÂN</h1>
+    <p>
+        Nơi lưu trữ kiến thức, tài liệu học tập và những nội dung
+        quan trọng trong lĩnh vực Công nghệ thông tin.
+    </p>
+    <p>
+        Học tập – Khám phá – Phát triển kiến thức mỗi ngày.
+    </p>
+</section>
+
+<section id="lessons">
+    <h2 class="section-title">📖 DANH SÁCH 8 BÀI HỌC</h2>
+
+    <input
+        type="text"
+        id="searchInput"
+        class="search-box"
+        placeholder="🔍 Tìm kiếm bài học..."
+        oninput="searchLessons()"
+    >
+
+    <div class="lesson-grid" id="lessonGrid"></div>
+
+    <div class="lesson-detail" id="lessonDetail"></div>
+</section>
+
+<section id="notes">
+    <div class="note-box">
+        <h2>📝 GHI CHÚ BÀI HỌC</h2>
+        <p>
+            Chọn bài học và ghi lại những kiến thức quan trọng.
+            Bạn có thể lưu ghi chú để xem lại khi cần.
+        </p>
+
+        <select id="lessonSelect" onchange="loadLessonNote()">
+            <option value="1">Bài 1: CMCN 4.0 và Chuyển đổi số</option>
+            <option value="2">Bài 2: Thiết bị và phần cứng máy tính</option>
+            <option value="3">Bài 3: Hệ điều hành và phần mềm</option>
+            <option value="4">Bài 4: Mạng máy tính và Internet</option>
+            <option value="5">Bài 5: Điện toán đám mây</option>
+            <option value="6">Bài 6: Dữ liệu lớn Big Data</option>
+            <option value="7">Bài 7: Trí tuệ nhân tạo AI</option>
+            <option value="8">Bài 8: Internet vạn vật IoT và an toàn số</option>
+        </select>
+
+        <textarea
+            id="lessonNote"
+            placeholder="Nhập nội dung ghi chú tại đây..."
+        ></textarea>
+
+        <div class="button-group">
+            <button onclick="saveLessonNote()">💾 Lưu ghi chú</button>
+            <button class="secondary-button" onclick="clearLessonNote()">
+                🗑 Xóa ghi chú
+            </button>
+        </div>
+
+        <p id="noteStatus"></p>
+    </div>
+</section>
+
+<section id="references">
+    <div class="reference-box">
+        <h2>🔗 TÀI LIỆU THAM KHẢO</h2>
+        <p>
+            Một số nguồn tài liệu trực tuyến giúp mở rộng kiến thức
+            về các chủ đề Công nghệ thông tin.
+        </p>
+
+        <div class="reference-list">
+
+            <div class="reference-item">
+                <h3>Bài 1: Công nghiệp 4.0</h3>
+                <p>Tìm hiểu về cuộc cách mạng công nghiệp lần thứ tư.</p>
+                <a href="https://www.ibm.com/think/topics/industry-4-0"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Bài 2: Phần cứng máy tính</h3>
+                <p>Tìm hiểu các thành phần cơ bản của máy tính.</p>
+                <a href="https://www.intel.com/content/www/us/en/tech-tips-and-tricks/computer-basics.html"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Bài 3: Hệ điều hành</h3>
+                <p>Tìm hiểu hệ điều hành và các phần mềm máy tính.</p>
+                <a href="https://www.microsoft.com/windows"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Bài 4: Mạng máy tính</h3>
+                <p>Tìm hiểu mạng máy tính và Internet.</p>
+                <a href="https://www.cloudflare.com/learning/network-layer/what-is-a-computer-network/"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Bài 5: Điện toán đám mây</h3>
+                <p>Tìm hiểu khái niệm Cloud Computing.</p>
+                <a href="https://aws.amazon.com/what-is-cloud-computing/"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Bài 6: Big Data</h3>
+                <p>Tìm hiểu về dữ liệu lớn và ứng dụng.</p>
+                <a href="https://www.ibm.com/think/topics/big-data"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Bài 7: Trí tuệ nhân tạo AI</h3>
+                <p>Tìm hiểu về trí tuệ nhân tạo.</p>
+                <a href="https://www.ibm.com/think/topics/artificial-intelligence"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Bài 8: Internet vạn vật IoT</h3>
+                <p>Tìm hiểu về Internet of Things.</p>
+                <a href="https://www.ibm.com/think/topics/internet-of-things"
+                   target="_blank" rel="noopener noreferrer">Xem tài liệu →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="about-box">
+        <h2>👨‍🎓 GIỚI THIỆU</h2>
+        <p><strong>Họ và tên:</strong> Bùi Mạnh Trường</p>
+        <p><strong>Mã số sinh viên:</strong> PK05092</p>
+        <p><strong>Ngành học:</strong> Lập trình Web</p>
+        <p><strong>Sản phẩm:</strong> Thư viện số cá nhân</p>
+        <p>
+            Website được xây dựng nhằm hỗ trợ việc lưu trữ,
+            tìm kiếm và ôn tập kiến thức Công nghệ thông tin.
+        </p>
+    </div>
+</section>
+
 </div>
-<p>Chào mừng bạn đến với thư viện số cá nhân. Đây là nơi tổng hợp kiến thức, tài liệu và bài học về Công nghệ thông tin 4.0. Hệ thống gồm 8 bài học với lý thuyết, ví dụ thực tế và câu hỏi ôn tập.</p>
-</section>
-
-<section class="section" id="catalog">
-<h2>📚 DANH SÁCH 8 BÀI HỌC</h2>
-<div class="grid" id="cards"></div>
-</section>
-
-<div id="lessons"></div>
-
-</main>
 
 <footer>
-THƯ VIỆN SỐ CÁ NHÂN - BÙI MẠNH TRƯỜNG<br>
-MSSV: PK05092 | Lập trình Web<br>
-© 2026
+    <p>© 2026 - THƯ VIỆN SỐ CÁ NHÂN</p>
+    <p>Thiết kế và phát triển bởi Bùi Mạnh Trường</p>
 </footer>
 
 <script>
-const data=[
+
+// ===============================
+// DỮ LIỆU 8 BÀI HỌC
+// ===============================
+
+const lessons = [
+
 {
-title:"CMCN 4.0 và Chuyển đổi số",
-icon:"🌐",
-goal:"Hiểu được các cuộc cách mạng công nghiệp, khái niệm CMCN 4.0 và vai trò của chuyển đổi số.",
-topics:[
-["1. Các cuộc cách mạng công nghiệp","Cuộc cách mạng công nghiệp lần thứ nhất gắn với máy hơi nước và cơ giới hóa. Lần thứ hai gắn với điện năng và sản xuất hàng loạt. Lần thứ ba gắn với điện tử, máy tính và tự động hóa. Lần thứ tư gắn với công nghệ số, kết nối thông minh và dữ liệu."],
-["2. CMCN 4.0 là gì?","CMCN 4.0 là giai đoạn phát triển dựa trên sự kết hợp giữa công nghệ số, công nghệ vật lý và công nghệ sinh học. Những công nghệ tiêu biểu gồm AI, IoT, Big Data, Cloud Computing, robot và tự động hóa."],
-["3. Chuyển đổi số","Chuyển đổi số là quá trình ứng dụng công nghệ số và dữ liệu để thay đổi phương thức hoạt động, quản lý và cung cấp dịch vụ. Mục tiêu là nâng cao hiệu quả, trải nghiệm và tạo ra giá trị mới."],
-["4. Phân biệt số hóa và chuyển đổi số","Số hóa là chuyển thông tin giấy thành dữ liệu điện tử. Ví dụ quét tài liệu thành PDF. Chuyển đổi số rộng hơn, thay đổi cả quy trình và phương thức hoạt động dựa trên công nghệ."],
-["5. Ứng dụng trong đời sống","Giáo dục sử dụng lớp học trực tuyến và học liệu số. Y tế sử dụng hồ sơ điện tử. Ngân hàng sử dụng thanh toán trực tuyến. Giao thông sử dụng bản đồ số và hệ thống quản lý thông minh."],
-["6. Cơ hội và thách thức","Cơ hội gồm tăng năng suất, tiết kiệm thời gian và tạo ra nghề nghiệp mới. Thách thức gồm nguy cơ mất an toàn dữ liệu, lừa đảo trực tuyến, thiếu kỹ năng số và thay đổi yêu cầu việc làm."]
-],
-example:"Sinh viên có thể sử dụng Google Drive để lưu tài liệu, Google Meet để học trực tuyến và hệ thống quản lý học tập để nộp bài. Đây là những ví dụ ứng dụng công nghệ số trong giáo dục.",
-questions:[["CMCN 4.0 gắn liền với công nghệ nào?",["Máy hơi nước","AI và IoT","Động cơ đốt","Máy đánh chữ"],1],["Quét tài liệu giấy thành PDF là gì?",["Số hóa","Robot hóa","Tự động hóa","Lập trình"],0],["Chuyển đổi số hướng đến điều gì?",["Chỉ mua máy tính","Thay đổi quy trình bằng công nghệ và dữ liệu","Chỉ lưu tài liệu","Chỉ sử dụng Internet"],1]]
+    title: "Bài 1: CMCN 4.0 và Chuyển đổi số",
+    description: "Tìm hiểu cuộc cách mạng công nghiệp lần thứ tư và vai trò của chuyển đổi số.",
+    goal: "Hiểu được khái niệm CMCN 4.0, các công nghệ tiêu biểu và tác động của chuyển đổi số.",
+    sections: [
+        {
+            title: "1. Khái niệm CMCN 4.0",
+            content: "Cách mạng công nghiệp lần thứ tư là giai đoạn phát triển dựa trên sự kết hợp giữa công nghệ số, công nghệ vật lý và công nghệ sinh học. Các hệ thống thông minh có khả năng kết nối, trao đổi dữ liệu và hỗ trợ tự động hóa nhiều hoạt động."
+        },
+        {
+            title: "2. Những công nghệ tiêu biểu",
+            content: "Một số công nghệ nổi bật gồm trí tuệ nhân tạo (AI), Internet vạn vật (IoT), dữ liệu lớn (Big Data), điện toán đám mây, robot thông minh và công nghệ in 3D."
+        },
+        {
+            title: "3. Chuyển đổi số",
+            content: "Chuyển đổi số là quá trình ứng dụng công nghệ số để thay đổi cách tổ chức hoạt động, cung cấp dịch vụ và tạo ra giá trị mới. Ví dụ: trường học sử dụng hệ thống quản lý học tập trực tuyến, doanh nghiệp sử dụng hóa đơn điện tử."
+        },
+        {
+            title: "4. Tác động của CMCN 4.0",
+            content: "Công nghệ giúp tăng năng suất, cải thiện chất lượng dịch vụ, hỗ trợ kết nối toàn cầu và tạo ra nhiều ngành nghề mới. Tuy nhiên, xã hội cũng cần chú ý đến bảo mật thông tin, khoảng cách số và nhu cầu đào tạo kỹ năng mới."
+        }
+    ],
+    example: "Ví dụ tại Việt Nam: thanh toán bằng mã QR, học trực tuyến, dịch vụ công trực tuyến và ứng dụng ngân hàng số.",
+    summary: "CMCN 4.0 gắn liền với kết nối, dữ liệu, tự động hóa và trí tuệ nhân tạo. Chuyển đổi số giúp ứng dụng công nghệ vào học tập, sản xuất và đời sống.",
+    quiz: [
+        {
+            q: "Công nghệ nào là một thành phần tiêu biểu của CMCN 4.0?",
+            options: ["AI", "Máy đánh chữ cơ", "Đèn dầu", "Giấy viết"],
+            answer: 0
+        },
+        {
+            q: "Chuyển đổi số là gì?",
+            options: ["Chỉ mua máy tính mới", "Ứng dụng công nghệ số để thay đổi hoạt động", "Ngừng sử dụng Internet", "Chỉ lưu tài liệu giấy"],
+            answer: 1
+        },
+        {
+            q: "Ví dụ nào thể hiện chuyển đổi số?",
+            options: ["Ghi sổ hoàn toàn bằng tay", "Thanh toán bằng mã QR", "Viết thư bằng giấy", "Dùng máy đánh chữ"],
+            answer: 1
+        }
+    ]
 },
+
 {
-title:"Thiết bị và phần cứng máy tính",icon:"🖥️",
-goal:"Nhận biết cấu tạo máy tính, chức năng các linh kiện và thông số cơ bản.",
-topics:[
-["1. Khái niệm phần cứng","Phần cứng là những bộ phận vật lý cấu thành máy tính như CPU, RAM, ổ cứng, màn hình, bàn phím và chuột."],
-["2. CPU","CPU là bộ xử lý trung tâm, thực hiện các phép tính và xử lý lệnh của chương trình. CPU ảnh hưởng lớn đến tốc độ xử lý của máy tính."],
-["3. RAM","RAM là bộ nhớ tạm thời lưu dữ liệu của chương trình đang chạy. Dung lượng RAM lớn hơn thường giúp máy chạy nhiều ứng dụng đồng thời thuận lợi hơn."],
-["4. Ổ cứng HDD và SSD","HDD lưu dữ liệu bằng đĩa từ. SSD sử dụng bộ nhớ flash, thường có tốc độ truy xuất nhanh hơn HDD. Cả hai đều dùng để lưu hệ điều hành, phần mềm và dữ liệu."],
-["5. Bo mạch chủ và nguồn","Bo mạch chủ kết nối các linh kiện trong máy tính. Bộ nguồn cung cấp điện cho các thành phần hoạt động."],
-["6. Thiết bị nhập và xuất","Thiết bị nhập gồm bàn phím, chuột, micro và máy quét. Thiết bị xuất gồm màn hình, máy in và loa."],
-["7. Chọn máy tính","Học tập văn phòng cần cấu hình vừa phải. Lập trình nên ưu tiên CPU, RAM và SSD phù hợp. Đồ họa và dựng phim có thể cần card đồ họa chuyên dụng."]
-],
-example:"Khi mở trình duyệt, CPU xử lý lệnh, RAM lưu dữ liệu đang hoạt động, SSD lưu phần mềm và màn hình hiển thị kết quả.",
-questions:[["CPU có chức năng gì?",["Lưu trữ lâu dài","Xử lý lệnh","Hiển thị hình ảnh","Nhập dữ liệu"],1],["RAM là bộ nhớ gì?",["Tạm thời","Quang học","Ngoài","Giấy"],0],["Thiết bị xuất là gì?",["Chuột","Bàn phím","Màn hình","Máy quét"],2]]
+    title: "Bài 2: Thiết bị và phần cứng máy tính",
+    description: "Nhận biết các bộ phận cơ bản và chức năng của phần cứng máy tính.",
+    goal: "Phân biệt được các thành phần phần cứng và hiểu chức năng của từng thiết bị.",
+    sections: [
+        {
+            title: "1. Khái niệm phần cứng",
+            content: "Phần cứng máy tính là các bộ phận vật lý có thể nhìn thấy hoặc tiếp xúc được của máy tính. Phần cứng phối hợp với phần mềm để xử lý thông tin và thực hiện yêu cầu của người dùng."
+        },
+        {
+            title: "2. CPU - Bộ xử lý trung tâm",
+            content: "CPU là bộ phận thực hiện các phép tính và xử lý lệnh của chương trình. CPU thường được đánh giá qua kiến trúc, số nhân, số luồng và tốc độ xử lý."
+        },
+        {
+            title: "3. RAM và ROM",
+            content: "RAM là bộ nhớ tạm thời dùng để lưu dữ liệu và chương trình đang hoạt động. Khi mất điện, dữ liệu trong RAM thường bị mất. ROM là bộ nhớ chỉ đọc hoặc ít thay đổi, thường lưu chương trình cần thiết cho thiết bị."
+        },
+        {
+            title: "4. Ổ cứng và thiết bị ngoại vi",
+            content: "HDD và SSD là thiết bị lưu trữ dữ liệu lâu dài. SSD thường có tốc độ truy xuất nhanh hơn HDD. Thiết bị ngoại vi gồm bàn phím, chuột, màn hình, máy in, webcam và loa."
+        },
+        {
+            title: "5. Bo mạch chủ và nguồn",
+            content: "Bo mạch chủ kết nối các linh kiện và cho phép chúng trao đổi dữ liệu. Bộ nguồn cung cấp điện năng phù hợp cho các thành phần trong máy tính."
+        }
+    ],
+    example: "Ví dụ: một máy tính học tập có CPU, RAM 8 GB, SSD 512 GB, màn hình, bàn phím và chuột.",
+    summary: "Phần cứng là nền tảng vật lý của máy tính. CPU xử lý, RAM lưu tạm, SSD lưu trữ lâu dài và bo mạch chủ kết nối các linh kiện.",
+    quiz: [
+        {
+            q: "CPU có chức năng chính là gì?",
+            options: ["Hiển thị hình ảnh", "Xử lý lệnh và dữ liệu", "In tài liệu", "Phát âm thanh"],
+            answer: 1
+        },
+        {
+            q: "RAM thuộc loại bộ nhớ nào?",
+            options: ["Bộ nhớ tạm thời", "Thiết bị nhập", "Thiết bị xuất", "Bộ nhớ quang học"],
+            answer: 0
+        },
+        {
+            q: "Thiết bị nào thường dùng để lưu trữ dữ liệu lâu dài?",
+            options: ["RAM", "CPU", "SSD", "Bàn phím"],
+            answer: 2
+        }
+    ]
 },
+
 {
-title:"Hệ điều hành và phần mềm",icon:"⚙️",
-goal:"Hiểu vai trò hệ điều hành, phân loại phần mềm và quản lý tệp.",
-topics:[
-["1. Khái niệm hệ điều hành","Hệ điều hành là phần mềm hệ thống quản lý tài nguyên máy tính và tạo môi trường cho các ứng dụng hoạt động."],
-["2. Chức năng hệ điều hành","Quản lý CPU, bộ nhớ, thiết bị ngoại vi, tệp tin, tài khoản và cung cấp giao diện cho người dùng."],
-["3. Các hệ điều hành phổ biến","Windows thường dùng trên máy tính cá nhân. macOS được sử dụng trên máy Mac. Linux phổ biến trong máy chủ và môi trường phát triển. Android và iOS dùng trên thiết bị di động."],
-["4. Phần mềm hệ thống","Bao gồm hệ điều hành, trình điều khiển thiết bị và các tiện ích giúp máy tính vận hành."],
-["5. Phần mềm ứng dụng","Là phần mềm phục vụ công việc cụ thể như Word, Excel, PowerPoint, trình duyệt web và phần mềm thiết kế."],
-["6. Quản lý tệp","Tệp là đơn vị lưu trữ thông tin. Thư mục giúp sắp xếp các tệp theo chủ đề, môn học và dự án."],
-["7. Bảo trì hệ thống","Cần cập nhật phần mềm, sử dụng phần mềm đáng tin cậy, sao lưu dữ liệu và kiểm tra bảo mật."]
-],
-example:"Sinh viên có thể tạo thư mục CNTT4.0, bên trong có các thư mục Bai01, Bai02, TaiLieu và BaiTap để quản lý tài liệu học tập.",
-questions:[["Windows là gì?",["Hệ điều hành","Thiết bị nhập","Ổ cứng","Trình duyệt"],0],["Word thuộc loại nào?",["Phần cứng","Phần mềm ứng dụng","Bộ nhớ","Hệ điều hành"],1],["Thư mục dùng để làm gì?",["Sắp xếp tệp","Tăng CPU","Kết nối mạng","In tài liệu"],0]]
+    title: "Bài 3: Hệ điều hành và phần mềm",
+    description: "Tìm hiểu hệ điều hành, phần mềm hệ thống và phần mềm ứng dụng.",
+    goal: "Hiểu vai trò của hệ điều hành và phân biệt được các nhóm phần mềm.",
+    sections: [
+        {
+            title: "1. Khái niệm hệ điều hành",
+            content: "Hệ điều hành là phần mềm hệ thống quản lý tài nguyên máy tính và cung cấp môi trường để các chương trình ứng dụng hoạt động. Hệ điều hành giúp người dùng tương tác với máy tính."
+        },
+        {
+            title: "2. Chức năng của hệ điều hành",
+            content: "Hệ điều hành quản lý bộ xử lý, bộ nhớ, thiết bị vào ra, tệp tin và quyền truy cập. Nó cũng cung cấp giao diện và hỗ trợ chạy chương trình."
+        },
+        {
+            title: "3. Một số hệ điều hành phổ biến",
+            content: "Windows thường được sử dụng trên máy tính cá nhân. macOS được phát triển cho máy tính Mac. Linux có nhiều bản phân phối và được sử dụng trong máy chủ, máy tính và hệ thống nhúng. Android và iOS là các hệ điều hành di động phổ biến."
+        },
+        {
+            title: "4. Phần mềm ứng dụng",
+            content: "Phần mềm ứng dụng giúp người dùng thực hiện công việc cụ thể. Ví dụ: Microsoft Word dùng soạn thảo văn bản, Excel xử lý bảng tính, trình duyệt web truy cập Internet và phần mềm thiết kế dùng tạo hình ảnh."
+        },
+        {
+            title: "5. Cài đặt và cập nhật phần mềm",
+            content: "Nên tải phần mềm từ trang chính thức hoặc cửa hàng ứng dụng đáng tin cậy. Cập nhật phần mềm giúp sửa lỗi, cải thiện tính năng và tăng cường bảo mật."
+        }
+    ],
+    example: "Ví dụ: Windows là hệ điều hành, còn Microsoft Word là phần mềm ứng dụng chạy trên hệ điều hành.",
+    summary: "Hệ điều hành quản lý phần cứng và phần mềm. Phần mềm ứng dụng hỗ trợ người dùng thực hiện các công việc cụ thể.",
+    quiz: [
+        {
+            q: "Phần mềm nào là hệ điều hành?",
+            options: ["Microsoft Word", "Windows", "Photoshop", "PowerPoint"],
+            answer: 1
+        },
+        {
+            q: "Microsoft Excel thường được dùng để làm gì?",
+            options: ["Xử lý bảng tính", "Quản lý nguồn điện", "Điều khiển CPU", "Thay thế RAM"],
+            answer: 0
+        },
+        {
+            q: "Vì sao nên cập nhật phần mềm?",
+            options: ["Làm máy tính mất dữ liệu", "Sửa lỗi và cải thiện bảo mật", "Ngắt kết nối Internet", "Xóa hệ điều hành"],
+            answer: 1
+        }
+    ]
 },
+
 {
-title:"Mạng máy tính và Internet",icon:"📡",
-goal:"Hiểu mạng máy tính, thiết bị mạng và cách Internet hoạt động.",
-topics:[
-["1. Khái niệm mạng máy tính","Mạng máy tính là hệ thống các thiết bị được kết nối để trao đổi dữ liệu và chia sẻ tài nguyên."],
-["2. Mạng LAN","LAN là mạng cục bộ trong phạm vi nhỏ như nhà ở, trường học hoặc văn phòng."],
-["3. Mạng WAN","WAN kết nối các mạng trên phạm vi địa lý rộng. Internet là hệ thống mạng toàn cầu lớn nhất."],
-["4. Thiết bị mạng","Modem kết nối đường truyền Internet. Router định tuyến dữ liệu. Switch kết nối nhiều thiết bị trong mạng nội bộ. Access Point cung cấp kết nối Wi-Fi."],
-["5. Địa chỉ IP và DNS","IP định danh thiết bị trong mạng. DNS giúp chuyển tên miền thành địa chỉ IP để trình duyệt tìm máy chủ."],
-["6. Trình duyệt và website","Trình duyệt gửi yêu cầu đến máy chủ web. Máy chủ phản hồi dữ liệu để trình duyệt hiển thị nội dung trang web."],
-["7. An toàn Internet","Không chia sẻ mật khẩu, tránh đường link đáng ngờ, sử dụng HTTPS và bật xác thực nhiều lớp."]
-],
-example:"Khi truy cập một website, trình duyệt sử dụng DNS để tìm địa chỉ máy chủ, sau đó gửi yêu cầu và nhận nội dung trang web.",
-questions:[["LAN là mạng gì?",["Mạng cục bộ","Mạng toàn cầu","Mạng vệ tinh","Mạng xã hội"],0],["Thiết bị định tuyến là gì?",["Router","RAM","CPU","Máy in"],0],["DNS có chức năng gì?",["Chuyển tên miền thành IP","In tài liệu","Lưu hình ảnh","Chạy phần mềm"],0]]
+    title: "Bài 4: Mạng máy tính và Internet",
+    description: "Tìm hiểu cách các thiết bị kết nối và trao đổi dữ liệu.",
+    goal: "Hiểu khái niệm mạng máy tính, Internet và một số thiết bị mạng cơ bản.",
+    sections: [
+        {
+            title: "1. Khái niệm mạng máy tính",
+            content: "Mạng máy tính là hệ thống gồm nhiều thiết bị được kết nối để trao đổi dữ liệu và chia sẻ tài nguyên như tệp tin, máy in hoặc kết nối Internet."
+        },
+        {
+            title: "2. Phân loại mạng",
+            content: "LAN là mạng cục bộ trong phạm vi nhỏ như nhà ở, văn phòng hoặc trường học. WAN kết nối các mạng ở phạm vi địa lý rộng. Internet là hệ thống mạng toàn cầu kết nối rất nhiều mạng và thiết bị."
+        },
+        {
+            title: "3. Thiết bị mạng",
+            content: "Router định tuyến dữ liệu giữa các mạng. Switch kết nối các thiết bị trong mạng LAN. Modem hỗ trợ kết nối với đường truyền của nhà cung cấp dịch vụ Internet. Access Point cung cấp kết nối mạng không dây."
+        },
+        {
+            title: "4. Địa chỉ IP và DNS",
+            content: "Địa chỉ IP giúp nhận diện thiết bị trong mạng. DNS chuyển đổi tên miền dễ nhớ thành địa chỉ IP để thiết bị tìm đúng máy chủ."
+        },
+        {
+            title: "5. An toàn khi sử dụng Internet",
+            content: "Người dùng nên sử dụng mật khẩu mạnh, bật xác thực nhiều lớp, kiểm tra địa chỉ website và không tùy tiện mở tệp đính kèm hoặc đường link đáng ngờ."
+        }
+    ],
+    example: "Ví dụ: máy tính và điện thoại kết nối Wi-Fi trong gia đình để truy cập Internet và chia sẻ dữ liệu.",
+    summary: "Mạng máy tính cho phép các thiết bị kết nối, trao đổi dữ liệu và sử dụng chung tài nguyên. Internet là mạng kết nối toàn cầu.",
+    quiz: [
+        {
+            q: "LAN là loại mạng nào?",
+            options: ["Mạng cục bộ", "Mạng vệ tinh", "Mạng truyền hình", "Mạng không dây toàn cầu"],
+            answer: 0
+        },
+        {
+            q: "Router thường có chức năng gì?",
+            options: ["In tài liệu", "Định tuyến dữ liệu giữa các mạng", "Lưu trữ hình ảnh", "Soạn thảo văn bản"],
+            answer: 1
+        },
+        {
+            q: "DNS có nhiệm vụ gì?",
+            options: ["Chuyển tên miền thành địa chỉ IP", "Tăng dung lượng RAM", "Xóa dữ liệu", "Điều khiển màn hình"],
+            answer: 0
+        }
+    ]
 },
+
 {
-title:"Điện toán đám mây",icon:"☁️",
-goal:"Hiểu điện toán đám mây, mô hình dịch vụ và ứng dụng.",
-topics:[
-["1. Khái niệm","Điện toán đám mây là việc cung cấp tài nguyên máy tính qua Internet như lưu trữ, máy chủ, cơ sở dữ liệu và phần mềm."],
-["2. Đặc điểm","Người dùng có thể truy cập tài nguyên từ xa, mở rộng theo nhu cầu và sử dụng dịch vụ mà không cần tự xây dựng toàn bộ hạ tầng."],
-["3. IaaS","Infrastructure as a Service là mô hình cung cấp hạ tầng như máy chủ ảo, lưu trữ và mạng."],
-["4. PaaS","Platform as a Service cung cấp môi trường và nền tảng để phát triển, thử nghiệm và triển khai ứng dụng."],
-["5. SaaS","Software as a Service cung cấp phần mềm qua Internet. Ví dụ các dịch vụ email và ứng dụng văn phòng trực tuyến."],
-["6. Mô hình triển khai","Đám mây công cộng phục vụ nhiều khách hàng. Đám mây riêng dành cho một tổ chức. Đám mây lai kết hợp cả hai."],
-["7. Lợi ích và hạn chế","Lợi ích là linh hoạt, dễ mở rộng và hỗ trợ cộng tác. Hạn chế gồm phụ thuộc Internet, chi phí định kỳ và rủi ro bảo mật."]
-],
-example:"Google Drive cho phép lưu trữ và chia sẻ tài liệu trực tuyến. Sinh viên có thể truy cập tài liệu từ máy tính hoặc điện thoại.",
-questions:[["SaaS là gì?",["Phần mềm như một dịch vụ","Máy tính cá nhân","Thiết bị mạng","Bộ nhớ RAM"],0],["Google Drive là ví dụ về:",["Dịch vụ đám mây","CPU","Hệ điều hành","Thiết bị nhập"],0],["Một hạn chế của Cloud là:",["Phụ thuộc Internet","Không lưu được dữ liệu","Không chia sẻ được","Không có phần mềm"],0]]
+    title: "Bài 5: Điện toán đám mây",
+    description: "Tìm hiểu cách lưu trữ và sử dụng tài nguyên máy tính qua Internet.",
+    goal: "Hiểu khái niệm, mô hình dịch vụ và ứng dụng của điện toán đám mây.",
+    sections: [
+        {
+            title: "1. Khái niệm điện toán đám mây",
+            content: "Điện toán đám mây là mô hình cung cấp tài nguyên công nghệ thông tin qua mạng Internet. Người dùng có thể sử dụng máy chủ, lưu trữ, cơ sở dữ liệu và phần mềm mà không cần tự quản lý toàn bộ hạ tầng."
+        },
+        {
+            title: "2. Các mô hình dịch vụ",
+            content: "IaaS cung cấp hạ tầng như máy chủ ảo và lưu trữ. PaaS cung cấp nền tảng để phát triển và triển khai ứng dụng. SaaS cung cấp phần mềm có thể sử dụng qua Internet."
+        },
+        {
+            title: "3. Một số dịch vụ phổ biến",
+            content: "Google Drive, OneDrive và Dropbox hỗ trợ lưu trữ, đồng bộ và chia sẻ tệp. Google Docs và Microsoft 365 hỗ trợ làm việc với tài liệu trực tuyến."
+        },
+        {
+            title: "4. Ưu điểm",
+            content: "Điện toán đám mây giúp truy cập dữ liệu từ nhiều thiết bị, dễ mở rộng dung lượng, hỗ trợ làm việc nhóm và giảm nhu cầu đầu tư hạ tầng ban đầu."
+        },
+        {
+            title: "5. Hạn chế và lưu ý",
+            content: "Dịch vụ đám mây phụ thuộc vào kết nối mạng, có thể phát sinh chi phí và cần quan tâm đến quyền riêng tư. Người dùng nên bảo vệ tài khoản và kiểm tra quyền chia sẻ tệp."
+        }
+    ],
+    example: "Ví dụ: sinh viên lưu bài tập trên Google Drive và mở tài liệu trên máy tính hoặc điện thoại.",
+    summary: "Điện toán đám mây cung cấp tài nguyên và dịch vụ qua Internet, hỗ trợ lưu trữ, làm việc nhóm và triển khai ứng dụng.",
+    quiz: [
+        {
+            q: "Dịch vụ nào là ví dụ về lưu trữ đám mây?",
+            options: ["Google Drive", "Bàn phím", "CPU", "Máy in"],
+            answer: 0
+        },
+        {
+            q: "SaaS là mô hình gì?",
+            options: ["Phần mềm dưới dạng dịch vụ", "Bộ nhớ vật lý", "Mạng nội bộ", "Thiết bị nhập"],
+            answer: 0
+        },
+        {
+            q: "Một hạn chế của điện toán đám mây là gì?",
+            options: ["Không thể chia sẻ dữ liệu", "Phụ thuộc vào kết nối mạng", "Không thể lưu trữ tệp", "Không có phần mềm"],
+            answer: 1
+        }
+    ]
 },
+
 {
-title:"Dữ liệu lớn Big Data",icon:"📊",
-goal:"Hiểu Big Data, đặc trưng 5V và ứng dụng phân tích dữ liệu.",
-topics:[
-["1. Khái niệm Big Data","Big Data là dữ liệu có quy mô, tốc độ phát sinh hoặc mức độ đa dạng lớn, cần phương pháp và công cụ phù hợp để lưu trữ và xử lý."],
-["2. Volume","Volume thể hiện khối lượng dữ liệu rất lớn được tạo ra từ nhiều nguồn."],
-["3. Velocity","Velocity thể hiện tốc độ dữ liệu được tạo ra, truyền tải và xử lý."],
-["4. Variety","Variety thể hiện sự đa dạng của dữ liệu như văn bản, hình ảnh, video và dữ liệu cảm biến."],
-["5. Veracity và Value","Veracity nói về độ tin cậy và chất lượng dữ liệu. Value nói về giá trị có thể khai thác từ dữ liệu."],
-["6. Quy trình xử lý","Thu thập dữ liệu, làm sạch, lưu trữ, xử lý, phân tích, trực quan hóa và sử dụng kết quả để hỗ trợ quyết định."],
-["7. Ứng dụng","Thương mại điện tử phân tích hành vi mua sắm. Giao thông phân tích lưu lượng. Giáo dục theo dõi tiến độ học tập."]
-],
-example:"Một cửa hàng trực tuyến phân tích đơn hàng để nhận biết sản phẩm được quan tâm nhiều, từ đó điều chỉnh kế hoạch nhập hàng.",
-questions:[["Volume có nghĩa là:",["Khối lượng dữ liệu","Tốc độ","Độ tin cậy","Giá trị"],0],["Variety nói về:",["Sự đa dạng dữ liệu","Tốc độ","Bảo mật","Dung lượng RAM"],0],["Big Data được dùng để:",["Phân tích dữ liệu","Thay thế Internet","Tăng kích thước màn hình","Sạc máy tính"],0]]
+    title: "Bài 6: Dữ liệu lớn Big Data",
+    description: "Khám phá khái niệm, đặc điểm và ứng dụng của dữ liệu lớn.",
+    goal: "Hiểu Big Data và vai trò của dữ liệu trong việc hỗ trợ phân tích, dự đoán và ra quyết định.",
+    sections: [
+        {
+            title: "1. Khái niệm Big Data",
+            content: "Big Data là tập dữ liệu có quy mô lớn, tốc độ phát sinh nhanh hoặc có cấu trúc phức tạp, khiến các phương pháp xử lý truyền thống khó đáp ứng đầy đủ."
+        },
+        {
+            title: "2. Đặc điểm của Big Data",
+            content: "Big Data thường được mô tả bằng mô hình 5V: Volume là khối lượng dữ liệu; Velocity là tốc độ tạo và xử lý dữ liệu; Variety là sự đa dạng dữ liệu; Veracity là độ tin cậy; Value là giá trị thu được."
+        },
+        {
+            title: "3. Quy trình xử lý dữ liệu",
+            content: "Quy trình cơ bản gồm thu thập dữ liệu, lưu trữ, làm sạch, xử lý, phân tích và trình bày kết quả. Chất lượng dữ liệu có ảnh hưởng lớn đến kết quả phân tích."
+        },
+        {
+            title: "4. Ứng dụng của Big Data",
+            content: "Big Data được sử dụng trong thương mại điện tử để phân tích nhu cầu khách hàng, trong y tế để hỗ trợ nghiên cứu, trong giao thông để phân tích lưu lượng và trong ngân hàng để phát hiện giao dịch bất thường."
+        },
+        {
+            title: "5. Thách thức",
+            content: "Các thách thức gồm bảo mật, quyền riêng tư, chất lượng dữ liệu, chi phí hạ tầng và yêu cầu nhân lực có kỹ năng phân tích."
+        }
+    ],
+    example: "Ví dụ: các sàn thương mại điện tử phân tích lượt xem và lịch sử mua hàng để đề xuất sản phẩm phù hợp.",
+    summary: "Big Data giúp xử lý và phân tích dữ liệu quy mô lớn nhằm tìm ra xu hướng, hỗ trợ dự đoán và ra quyết định.",
+    quiz: [
+        {
+            q: "Volume trong mô hình 5V có nghĩa là gì?",
+            options: ["Khối lượng dữ liệu", "Tốc độ mạng", "Độ bảo mật", "Giá thành"],
+            answer: 0
+        },
+        {
+            q: "Big Data có thể được ứng dụng trong lĩnh vực nào?",
+            options: ["Y tế", "Thương mại điện tử", "Giao thông", "Tất cả các đáp án trên"],
+            answer: 3
+        },
+        {
+            q: "Bước nào thường có trong quy trình xử lý dữ liệu?",
+            options: ["Làm sạch dữ liệu", "Phá hủy dữ liệu", "Tắt máy tính", "Tháo CPU"],
+            answer: 0
+        }
+    ]
 },
+
 {
-title:"Trí tuệ nhân tạo AI",icon:"🤖",
-goal:"Hiểu AI, học máy, AI tạo sinh và sử dụng có trách nhiệm.",
-topics:[
-["1. Khái niệm AI","Trí tuệ nhân tạo là lĩnh vực tạo ra hệ thống có khả năng thực hiện những nhiệm vụ thường cần trí tuệ con người như nhận dạng, phân loại, dự đoán và xử lý ngôn ngữ."],
-["2. Học máy","Machine Learning là một nhánh của AI, cho phép máy tính học các mẫu từ dữ liệu để đưa ra dự đoán hoặc phân loại."],
-["3. Học sâu","Deep Learning sử dụng mạng nơ-ron nhiều lớp để xử lý những bài toán phức tạp như nhận dạng hình ảnh và giọng nói."],
-["4. AI tạo sinh","AI tạo sinh có thể tạo văn bản, hình ảnh, âm thanh hoặc mã lập trình dựa trên yêu cầu của người dùng."],
-["5. Ứng dụng","AI được sử dụng trong dịch thuật, trợ lý ảo, nhận diện hình ảnh, đề xuất nội dung và hỗ trợ phân tích dữ liệu."],
-["6. Hạn chế","AI có thể tạo thông tin không chính xác, phản ánh sai lệch trong dữ liệu hoặc không hiểu đầy đủ ngữ cảnh."],
-["7. Sử dụng có trách nhiệm","Cần kiểm tra thông tin, bảo vệ dữ liệu cá nhân, tôn trọng bản quyền và không phụ thuộc hoàn toàn vào kết quả AI."]
-],
-example:"Sinh viên có thể dùng AI để gợi ý dàn ý bài thuyết trình, nhưng cần kiểm tra lại thông tin và tự hoàn thiện nội dung.",
-questions:[["AI là viết tắt của:",["Artificial Intelligence","Automatic Internet","Advanced Input","Application Interface"],0],["Machine Learning là:",["Một nhánh của AI","Một thiết bị","Một hệ điều hành","Một loại mạng"],0],["Kết quả AI cần được:",["Kiểm chứng","Tin tuyệt đối","Sao chép ngay","Không cần đọc"],0]]
+    title: "Bài 7: Trí tuệ nhân tạo AI",
+    description: "Tìm hiểu trí tuệ nhân tạo, học máy và các ứng dụng trong đời sống.",
+    goal: "Nắm được khái niệm AI, một số nhánh công nghệ và nguyên tắc sử dụng AI có trách nhiệm.",
+    sections: [
+        {
+            title: "1. Khái niệm AI",
+            content: "Trí tuệ nhân tạo là lĩnh vực công nghệ tạo ra hệ thống có khả năng thực hiện những nhiệm vụ thường cần đến trí tuệ con người, chẳng hạn nhận dạng hình ảnh, xử lý ngôn ngữ và hỗ trợ ra quyết định."
+        },
+        {
+            title: "2. Machine Learning",
+            content: "Machine Learning là một nhánh của AI, trong đó hệ thống học các mẫu từ dữ liệu để thực hiện dự đoán hoặc phân loại mà không cần lập trình riêng từng quy tắc cho mọi trường hợp."
+        },
+        {
+            title: "3. Deep Learning",
+            content: "Deep Learning sử dụng mạng nơ-ron nhân tạo nhiều lớp để học các đặc trưng phức tạp. Công nghệ này được ứng dụng trong nhận dạng giọng nói, hình ảnh và xử lý ngôn ngữ."
+        },
+        {
+            title: "4. Ứng dụng AI",
+            content: "AI được ứng dụng trong trợ lý ảo, dịch thuật, nhận diện hình ảnh, hỗ trợ y tế, giáo dục, sản xuất và giao thông."
+        },
+        {
+            title: "5. Sử dụng AI có trách nhiệm",
+            content: "Kết quả do AI tạo ra có thể sai hoặc thiếu ngữ cảnh. Người dùng cần kiểm tra thông tin từ nguồn đáng tin cậy, tôn trọng bản quyền và không đưa dữ liệu cá nhân hoặc thông tin nhạy cảm lên công cụ không phù hợp."
+        }
+    ],
+    example: "Ví dụ: công cụ AI có thể hỗ trợ giải thích kiến thức, gợi ý ý tưởng, dịch văn bản và nhận diện hình ảnh.",
+    summary: "AI giúp máy tính thực hiện các nhiệm vụ thông minh. Cần kiểm tra kết quả và sử dụng AI một cách có trách nhiệm.",
+    quiz: [
+        {
+            q: "AI là viết tắt của cụm từ nào?",
+            options: ["Artificial Intelligence", "Automatic Internet", "Advanced Input", "Application Interface"],
+            answer: 0
+        },
+        {
+            q: "Machine Learning là gì?",
+            options: ["Một nhánh của AI", "Một thiết bị lưu trữ", "Một hệ điều hành", "Một loại màn hình"],
+            answer: 0
+        },
+        {
+            q: "Khi sử dụng nội dung do AI tạo ra, cần làm gì?",
+            options: ["Tin tuyệt đối", "Kiểm tra lại thông tin", "Không cần đọc", "Chia sẻ mọi dữ liệu cá nhân"],
+            answer: 1
+        }
+    ]
 },
+
 {
-title:"Internet vạn vật IoT và an toàn số",icon:"💡",
-goal:"Hiểu thiết bị kết nối, cảm biến và cách bảo vệ hệ thống IoT.",
-topics:[
-["1. Khái niệm IoT","Internet of Things là mạng lưới các thiết bị có cảm biến, phần mềm và kết nối mạng để thu thập và trao đổi dữ liệu."],
-["2. Thành phần IoT","Bao gồm cảm biến, thiết bị kết nối, mạng truyền dữ liệu, nền tảng xử lý và ứng dụng điều khiển."],
-["3. Nguyên lý hoạt động","Thiết bị thu thập dữ liệu, gửi qua mạng đến nền tảng xử lý, sau đó hiển thị kết quả hoặc thực hiện hành động theo cấu hình."],
-["4. Nhà thông minh","Đèn thông minh, camera, cảm biến chuyển động và điều hòa có thể được kết nối để hỗ trợ quản lý ngôi nhà."],
-["5. Nông nghiệp thông minh","Cảm biến theo dõi độ ẩm đất, nhiệt độ và môi trường để hỗ trợ điều chỉnh tưới tiêu."],
-["6. Công nghiệp thông minh","IoT hỗ trợ giám sát máy móc, theo dõi trạng thái thiết bị và phát hiện dấu hiệu bất thường."],
-["7. An toàn IoT","Cần đổi mật khẩu mặc định, cập nhật phần mềm, kiểm soát quyền truy cập và bảo vệ dữ liệu cá nhân."]
-],
-example:"Hệ thống tưới cây thông minh sử dụng cảm biến độ ẩm để theo dõi đất. Khi độ ẩm thấp hơn ngưỡng cài đặt, hệ thống có thể kích hoạt tưới.",
-questions:[["IoT là viết tắt của:",["Internet of Things","Input of Technology","Internal Online Tool","Internet Office"],0],["Thiết bị nào thu thập nhiệt độ?",["Cảm biến","Máy in","Bàn phím","Màn hình"],0],["Cách bảo vệ IoT là:",["Đổi mật khẩu mặc định","Chia sẻ mật khẩu","Không cập nhật","Mở quyền công khai"],0]]
+    title: "Bài 8: IoT và an toàn số",
+    description: "Tìm hiểu Internet vạn vật và các nguyên tắc bảo vệ an toàn thông tin.",
+    goal: "Hiểu IoT, ví dụ ứng dụng và các biện pháp bảo vệ tài khoản, dữ liệu cá nhân.",
+    sections: [
+        {
+            title: "1. Khái niệm IoT",
+            content: "Internet vạn vật (Internet of Things - IoT) là mạng lưới các thiết bị vật lý có cảm biến, phần mềm và khả năng kết nối để thu thập, trao đổi dữ liệu qua mạng."
+        },
+        {
+            title: "2. Thành phần của hệ thống IoT",
+            content: "Một hệ thống IoT thường có thiết bị cảm biến, kết nối mạng, nền tảng xử lý dữ liệu và ứng dụng phục vụ người dùng."
+        },
+        {
+            title: "3. Ứng dụng IoT",
+            content: "IoT được ứng dụng trong nhà thông minh, nông nghiệp thông minh, theo dõi môi trường, quản lý năng lượng và giám sát thiết bị công nghiệp."
+        },
+        {
+            title: "4. Khái niệm an toàn số",
+            content: "An toàn số là việc bảo vệ thiết bị, tài khoản, dữ liệu và quyền riêng tư khi tham gia môi trường số. Đây là yếu tố quan trọng khi sử dụng Internet và các dịch vụ trực tuyến."
+        },
+        {
+            title: "5. Biện pháp bảo vệ",
+            content: "Sử dụng mật khẩu mạnh và riêng biệt, bật xác thực nhiều lớp, cập nhật phần mềm, sao lưu dữ liệu, kiểm tra quyền ứng dụng và cảnh giác với email hoặc đường link lạ."
+        }
+    ],
+    example: "Ví dụ: hệ thống tưới cây thông minh sử dụng cảm biến độ ẩm để hỗ trợ điều khiển tưới nước phù hợp.",
+    summary: "IoT kết nối các thiết bị để thu thập và trao đổi dữ liệu. An toàn số giúp bảo vệ tài khoản, thiết bị và thông tin cá nhân.",
+    quiz: [
+        {
+            q: "IoT là viết tắt của cụm từ nào?",
+            options: ["Internet of Things", "Input of Technology", "Information on Time", "Internet of Text"],
+            answer: 0
+        },
+        {
+            q: "Thiết bị nào có thể thuộc hệ thống IoT?",
+            options: ["Cảm biến nhiệt độ thông minh", "Giấy viết", "Bút chì", "Thước kẻ"],
+            answer: 0
+        },
+        {
+            q: "Biện pháp nào giúp bảo vệ tài khoản?",
+            options: ["Dùng một mật khẩu cho mọi nơi", "Chia sẻ mật khẩu công khai", "Bật xác thực nhiều lớp", "Nhấn mọi đường link"],
+            answer: 2
+        }
+    ]
 }
+
 ];
 
-const menu=document.getElementById("menu");
-const cards=document.getElementById("cards");
-const lessons=document.getElementById("lessons");
+// ===============================
+// HIỂN THỊ DANH SÁCH BÀI HỌC
+// ===============================
 
-function showLesson(n){
- document.querySelectorAll(".lesson").forEach(x=>x.classList.remove("show"));
- document.getElementById("lesson"+n).classList.add("show");
- document.getElementById("catalog").scrollIntoView();
- document.querySelectorAll("#menu button").forEach((b,i)=>b.classList.toggle("active",i===n));
+function renderLessons(data = lessons) {
+    const grid = document.getElementById("lessonGrid");
+    grid.innerHTML = "";
+
+    data.forEach((lesson) => {
+        const index = lessons.indexOf(lesson);
+
+        const card = document.createElement("div");
+        card.className = "lesson-card";
+
+        const title = document.createElement("h3");
+        title.textContent = lesson.title;
+
+        const description = document.createElement("p");
+        description.textContent = lesson.description;
+
+        const button = document.createElement("button");
+        button.textContent = "Xem bài học";
+        button.onclick = () => showLesson(index);
+
+        card.append(title, description, button);
+        grid.appendChild(card);
+    });
+
+    if (data.length === 0) {
+        grid.textContent = "Không tìm thấy bài học phù hợp.";
+    }
 }
 
-data.forEach((lesson,i)=>{
- const b=document.createElement("button");
- b.textContent="Bài "+(i+1);
- b.onclick=()=>showLesson(i);
- menu.appendChild(b);
+// ===============================
+// TÌM KIẾM BÀI HỌC
+// ===============================
 
- cards.innerHTML+=`
- <div class="card">
- <h3>${lesson.icon} Bài ${i+1}: ${lesson.title}</h3>
- <p>${lesson.goal}</p>
- <button onclick="showLesson(${i})">Vào học bài →</button>
- </div>`;
+function searchLessons() {
+    const keyword = document
+        .getElementById("searchInput")
+        .value.toLowerCase()
+        .trim();
 
- const topicHTML=lesson.topics.map(t=>`<h3>${t[0]}</h3><p>${t[1]}</p>`).join("");
- const quizHTML=lesson.questions.map((q,j)=>`
- <div class="question">
- <b>Câu ${j+1}. ${q[0]}</b>
- ${q[1].map((a,k)=>`<label><input type="radio" name="q${i}_${j}" value="${k}"> ${String.fromCharCode(65+k)}. ${a}</label>`).join("")}
- <p id="answer${i}_${j}" class="result"></p>
- </div>`).join("");
+    const results = lessons.filter(lesson =>
+        lesson.title.toLowerCase().includes(keyword) ||
+        lesson.description.toLowerCase().includes(keyword)
+    );
 
- lessons.innerHTML+=`
- <section class="section lesson" id="lesson${i}">
- <h2>${lesson.icon} BÀI ${i+1}: ${lesson.title.toUpperCase()}</h2>
- <div class="callout"><b>🎯 Mục tiêu bài học:</b><br>${lesson.goal}</div>
- <h3>📌 Nội dung trọng tâm</h3>
- <div class="grid">${lesson.topics.map(t=>`<div class="card"><b>${t[0]}</b><p>${t[1].slice(0,115)}...</p></div>`).join("")}</div>
- <h2>📖 KIẾN THỨC CHI TIẾT</h2>
- ${topicHTML}
- <div class="example"><b>💡 Ví dụ thực tế</b><br>${lesson.example}</div>
- <h2>📝 CÂU HỎI ÔN TẬP</h2>
- ${quizHTML}
- <button onclick="checkAnswers(${i})">Kiểm tra đáp án</button>
- <p id="score${i}" class="result"></p>
- </section>`;
-});
-
-function checkAnswers(i){
- let score=0;
- data[i].questions.forEach((q,j)=>{
- const chosen=document.querySelector(`input[name="q${i}_${j}"]:checked`);
- const result=document.getElementById(`answer${i}_${j}`);
- if(chosen && Number(chosen.value)===q[2]){
- score++;result.textContent="✓ Chính xác";result.style.color="green";
- }else{
- result.textContent="✗ Đáp án đúng: "+String.fromCharCode(65+q[2]);
- result.style.color="#d92b68";
- }
- });
- document.getElementById("score"+i).textContent="Kết quả: "+score+"/"+data[i].questions.length+" câu đúng.";
+    renderLessons(results);
 }
+
+// ===============================
+// HIỂN THỊ CHI TIẾT BÀI HỌC
+// ===============================
+
+function showLesson(index) {
+    const lesson = lessons[index];
+    const detail = document.getElementById("lessonDetail");
+
+    let html = `
+        <h2>${lesson.title}</h2>
+
+        <div class="highlight">
+            <strong>Mục tiêu bài học:</strong>
+            ${lesson.goal}
+        </div>
+    `;
+
+    lesson.sections.forEach(section => {
+        html += `
+            <h3>${section.title}</h3>
+            <p>${section.content}</p>
+        `;
+    });
+
+    html += `
+        <div class="highlight">
+            <strong>Ví dụ thực tế:</strong>
+            ${lesson.example}
+        </div>
+
+        <h3>📌 Kiến thức cần ghi nhớ</h3>
+        <p>${lesson.summary}</p>
+
+        <h3>📝 Câu hỏi ôn tập</h3>
+    `;
+
+    lesson.quiz.forEach((question, qIndex) => {
+        html += `
+            <div class="quiz-question">
+                <strong>Câu ${qIndex + 1}: ${question.q}</strong>
+        `;
+
+        question.options.forEach((option, optionIndex) => {
+            html += `
+                <label>
+                    <input
+                        type="radio"
+                        name="question${qIndex}"
+                        value="${optionIndex}"
+                    >
+                    ${option}
+                </label>
+            `;
+        });
+
+        html += `</div>`;
+    });
+
+    html += `
+        <button onclick="checkQuiz(${index})">
+            Chấm điểm bài học
+        </button>
+
+        <p id="quizResult" style="margin-top:15px;font-weight:bold;"></p>
+    `;
+
+    detail.innerHTML = html;
+    detail.style.display = "block";
+
+    document.getElementById("lessonSelect").value = String(index + 1);
+    loadLessonNote();
+
+    detail.scrollIntoView({ behavior: "smooth" });
+}
+
+// ===============================
+// CHẤM ĐIỂM TRẮC NGHIỆM
+// ===============================
+
+function checkQuiz(index) {
+    const quiz = lessons[index].quiz;
+    let score = 0;
+    let answered = 0;
+
+    quiz.forEach((question, qIndex) => {
+        const selected = document.querySelector(
+            `input[name="question${qIndex}"]:checked`
+        );
+
+        if (selected) {
+            answered++;
+
+            if (Number(selected.value) === question.answer) {
+                score++;
+            }
+        }
+    });
+
+    const result = document.getElementById("quizResult");
+
+    if (answered < quiz.length) {
+        result.style.color = "#bd5158";
+        result.textContent =
+            "Bạn cần trả lời đủ " + quiz.length + " câu trước khi chấm điểm.";
+        return;
+    }
+
+    result.style.color = "#25834c";
+    result.textContent =
+        "Kết quả: " + score + "/" + quiz.length +
+        " câu đúng. Điểm: " +
+        Math.round(score / quiz.length * 10) + "/10.";
+}
+
+// ===============================
+// CHỨC NĂNG GHI CHÚ
+// ===============================
+
+const noteStorageKey = "thuVienSoGhiChu_BuiManhTruong";
+
+function getAllNotes() {
+    try {
+        return JSON.parse(
+            localStorage.getItem(noteStorageKey) || "{}"
+        );
+    } catch (error) {
+        return {};
+    }
+}
+
+function loadLessonNote() {
+    const lesson = document.getElementById("lessonSelect").value;
+    const notes = getAllNotes();
+
+    document.getElementById("lessonNote").value =
+        notes[lesson] || "";
+
+    document.getElementById("noteStatus").textContent = "";
+}
+
+function saveLessonNote() {
+    const lesson = document.getElementById("lessonSelect").value;
+    const content = document.getElementById("lessonNote").value;
+
+    const notes = getAllNotes();
+    notes[lesson] = content;
+
+    try {
+        localStorage.setItem(noteStorageKey, JSON.stringify(notes));
+
+        document.getElementById("noteStatus").textContent =
+            "✓ Đã lưu ghi chú thành công!";
+    } catch (error) {
+        document.getElementById("noteStatus").textContent =
+            "Không thể lưu ghi chú trên trình duyệt này.";
+    }
+}
+
+function clearLessonNote() {
+    const lesson = document.getElementById("lessonSelect").value;
+
+    if (!confirm("Bạn có chắc chắn muốn xóa ghi chú của bài này?")) {
+        return;
+    }
+
+    const notes = getAllNotes();
+    delete notes[lesson];
+
+    localStorage.setItem(noteStorageKey, JSON.stringify(notes));
+
+    document.getElementById("lessonNote").value = "";
+    document.getElementById("noteStatus").textContent =
+        "✓ Đã xóa ghi chú bài học.";
+}
+
+// ===============================
+// KHỞI TẠO WEBSITE
+// ===============================
+
+renderLessons();
+loadLessonNote();
 
 </script>
+
 </body>
 </html>
