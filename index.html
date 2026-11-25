@@ -4,489 +4,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Thư Viện Số Cá Nhân - Bùi Mạnh Trường</title>
+<title>Thư viện số - Bùi Mạnh Trường</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(120deg, #ffe5ef, #f2eaff);
-    color: #202039;
-}
-
-/* THANH MENU */
-header {
-    width: 92%;
-    margin: 25px auto;
-    padding: 20px 25px;
-    background: rgba(255,255,255,0.95);
-    border: 1px solid #ffd1df;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    box-shadow: 0 8px 25px #eacbd9;
-}
-
-.logo {
-    color: #ed286b;
-    font-size: 21px;
-    font-weight: bold;
-}
-
-.logo small {
-    display: block;
-    color: #777;
-    font-size: 12px;
-    margin-top: 6px;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav a {
-    color: #34344d;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #ed286b;
-}
-
-/* KHUNG NỘI DUNG */
-.container {
-    width: 92%;
-    margin: 35px auto;
-    padding: 50px;
-    background: rgba(255,255,255,0.95);
-    border-radius: 25px;
-    box-shadow: 0 8px 30px #ead1df;
-}
-
-/* TRANG CHỦ */
-.tag {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #ffeaf1;
-    border: 1px solid #ff9fbd;
-    border-radius: 30px;
-    color: #ed286b;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-h1 {
-    font-size: clamp(34px, 6vw, 60px);
-    margin: 28px 0;
-    line-height: 1.2;
-}
-
-h1 span {
-    color: #ed286b;
-}
-
-.info {
-    padding: 25px;
-    border: 1px solid #ffbfd3;
-    border-radius: 18px;
-    background: #fff9fc;
-    line-height: 2.2;
-    margin-bottom: 25px;
-}
-
-.info strong {
-    color: #ed286b;
-}
-
-.description {
-    color: #55556b;
-    line-height: 1.9;
-    margin-bottom: 25px;
-    max-width: 900px;
-}
-
-/* NÚT BẤM */
-.btn {
-    display: inline-block;
-    padding: 15px 23px;
-    background: #ed286b;
-    color: white;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #bd1550;
-    transform: translateY(-3px);
-}
-
-.btn-outline {
-    background: white;
-    color: #ed286b;
-    border: 1px solid #ed286b;
-}
-
-/* TIÊU ĐỀ */
-.section-title {
-    color: #ed286b;
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-/* CÁC THẺ NỘI DUNG */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
-    margin-top: 30px;
-}
-
-.card {
-    padding: 25px;
-    border-radius: 18px;
-    background: #fff8fb;
-    border: 1px solid #ffd1df;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px #edcfdd;
-}
-
-.card h3 {
-    color: #d92364;
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: #666;
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 15px;
-    color: #ed286b;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* SỔ TAY */
-textarea {
-    width: 100%;
-    min-height: 160px;
-    padding: 15px;
-    border: 1px solid #ffb7cf;
-    border-radius: 12px;
-    font-family: Arial;
-    font-size: 15px;
-    resize: vertical;
-}
-
-#message {
-    color: #15945a;
-    margin-top: 12px;
-}
-
-/* CHÂN TRANG */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-    line-height: 1.8;
-}
-
-/* ĐIỆN THOẠI */
-@media(max-width: 650px) {
-    header {
-        justify-content: center;
-    }
-
-    nav {
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .container {
-        padding: 25px;
-    }
-}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#fff0f6;color:#252944;line-height:1.7}
+header{background:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;box-shadow:0 3px 15px #ddd}
+.logo{font-size:20px;font-weight:bold;color:#e72d70}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+button{cursor:pointer;border:0;border-radius:9px;padding:10px 15px;background:#fce3ed;color:#ad2455;font-weight:bold}
+button:hover,button.active{background:#e72d70;color:white}
+main{max-width:1100px;margin:30px auto;padding:0 18px}
+.hero,.section{background:white;border-radius:18px;padding:28px;margin-bottom:22px;box-shadow:0 5px 20px #e8cbd8}
+.hero h1{font-size:42px;color:#e72d70;line-height:1.2}
+.info{background:#fff5f9;border:1px solid #f5bfd4;border-radius:12px;padding:18px}
+.info b{color:#d92b68}
+h2{color:#d92b68}
+h3{color:#087d91;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{padding:18px;border:1px solid #f4c8da;border-radius:13px;background:#fffafd}
+.card h3{margin-top:0}
+.lesson{display:none}
+.lesson.show{display:block}
+.callout{background:#eff8fb;border-left:4px solid #16879a;padding:14px;margin:15px 0;border-radius:8px}
+.example{background:#fff7e9;border-left:4px solid #e5a13b;padding:14px;margin:15px 0}
+.question{padding:15px;border:1px solid #ddd;border-radius:12px;margin:12px 0}
+.question label{display:block;padding:5px}
+.result{font-weight:bold}
+footer{text-align:center;padding:25px;color:#777}
+@media(max-width:600px){.hero h1{font-size:32px}header{justify-content:center}}
 </style>
 </head>
 
 <body>
 
-<!-- THANH ĐIỀU HƯỚNG -->
 <header>
-    <div class="logo">
-        🌷 THƯ VIỆN SỐ CÁ NHÂN
-        <small>BÙI MẠNH TRƯỜNG | PK05092</small>
-    </div>
-
-    <nav>
-        <a href="#home">Trang chủ</a>
-        <a href="#slides">8 Slide Học Tập</a>
-        <a href="#notes">Sổ Tay Ghi Chú</a>
-        <a href="#documents">Tài Liệu</a>
-    </nav>
+<div class="logo">🌸 THƯ VIỆN SỐ CÁ NHÂN</div>
+<nav id="menu"></nav>
 </header>
 
-<!-- TRANG CHỦ -->
-<section class="container" id="home">
+<main>
 
-    <div class="tag">
-        🌷 KHÔNG GIAN LƯU TRỮ TRI THỨC CÔNG NGHỆ THÔNG TIN 4.0
-    </div>
-
-    <h1>
-        THƯ VIỆN SỐ <span>CÁ NHÂN</span>
-    </h1>
-
-    <div class="info">
-
-        <p>
-            👨‍🎓 <strong>SINH VIÊN THỰC HIỆN:</strong>
-            BÙI MẠNH TRƯỜNG
-        </p>
-
-        <p>
-            📌 <strong>MÃ SỐ SINH VIÊN:</strong>
-            PK05092
-        </p>
-
-        <p>
-            💻 <strong>CHUYÊN NGÀNH:</strong>
-            Lập trình Web
-        </p>
-
-    </div>
-
-    <p class="description">
-        Chào mừng bạn đến với thư viện số cá nhân của Bùi Mạnh Trường.
-        Đây là nơi tổng hợp hệ thống kiến thức, bài học và tài liệu
-        học tập xuyên suốt 8 chuyên đề Công nghệ Thông tin 4.0.
-        Cùng khám phá thế giới công nghệ, trí tuệ nhân tạo,
-        điện toán đám mây và tư duy lập trình.
-    </p>
-
-    <a href="#slides" class="btn">
-        🌸 Khám Phá 8 Slide
-    </a>
-
-    <a href="#notes" class="btn btn-outline">
-        ✍️ Sổ Tay Ghi Chú
-    </a>
-
+<section class="hero">
+<p>📚 KHÔNG GIAN HỌC TẬP CÔNG NGHỆ THÔNG TIN 4.0</p>
+<h1>THƯ VIỆN SỐ CÁ NHÂN</h1>
+<div class="info">
+<p>👨‍🎓 <b>Sinh viên:</b> Bùi Mạnh Trường</p>
+<p>📌 <b>Mã số sinh viên:</b> PK05092</p>
+<p>💻 <b>Chuyên ngành:</b> Lập trình Web</p>
+</div>
+<p>Chào mừng bạn đến với thư viện số cá nhân. Đây là nơi tổng hợp kiến thức, tài liệu và bài học về Công nghệ thông tin 4.0. Hệ thống gồm 8 bài học với lý thuyết, ví dụ thực tế và câu hỏi ôn tập.</p>
 </section>
 
-<!-- 8 CHỦ ĐỀ HỌC TẬP -->
-<section class="container" id="slides">
-
-    <h2 class="section-title">📚 8 CHỦ ĐỀ HỌC TẬP</h2>
-
-    <p class="description">
-        Tổng hợp kiến thức quan trọng trong môn Công nghệ Thông tin 4.0.
-    </p>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>01. Phần cứng máy tính</h3>
-            <p>Tìm hiểu CPU, RAM, ổ cứng và các thiết bị máy tính.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-        <div class="card">
-            <h3>02. Hệ điều hành</h3>
-            <p>Tìm hiểu Windows, Linux và cách quản lý máy tính.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-        <div class="card">
-            <h3>03. Mạng Internet</h3>
-            <p>Kiến thức về Internet, mạng máy tính và kết nối.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-        <div class="card">
-            <h3>04. Điện toán đám mây</h3>
-            <p>Tìm hiểu lưu trữ và xử lý dữ liệu trên nền tảng đám mây.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-        <div class="card">
-            <h3>05. Dữ liệu lớn Big Data</h3>
-            <p>Khám phá dữ liệu lớn và ứng dụng trong thực tế.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-        <div class="card">
-            <h3>06. Trí tuệ nhân tạo AI</h3>
-            <p>Tìm hiểu AI, ChatGPT và các ứng dụng thông minh.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-        <div class="card">
-            <h3>07. Lập trình Web</h3>
-            <p>Làm quen HTML, CSS, JavaScript và xây dựng website.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-        <div class="card">
-            <h3>08. An toàn thông tin</h3>
-            <p>Tìm hiểu bảo mật tài khoản và bảo vệ dữ liệu cá nhân.</p>
-            <a href="#documents">Khám phá →</a>
-        </div>
-
-    </div>
+<section class="section" id="catalog">
+<h2>📚 DANH SÁCH 8 BÀI HỌC</h2>
+<div class="grid" id="cards"></div>
 </section>
 
-<!-- SỔ TAY GHI CHÚ -->
-<section class="container" id="notes">
+<div id="lessons"></div>
 
-    <h2 class="section-title">✍️ SỔ TAY GHI CHÚ</h2>
+</main>
 
-    <p class="description">
-        Khu vực ghi lại kiến thức, ý tưởng và những điều quan trọng
-        trong quá trình học tập.
-    </p>
-
-    <textarea id="note"
-        placeholder="Nhập ghi chú học tập của bạn tại đây..."></textarea>
-
-    <br><br>
-
-    <button class="btn" onclick="saveNote()">
-        💾 Lưu ghi chú
-    </button>
-
-    <button class="btn btn-outline" onclick="clearNote()">
-        🗑️ Xóa ghi chú
-    </button>
-
-    <p id="message"></p>
-
-</section>
-
-<!-- TÀI LIỆU THAM KHẢO -->
-<section class="container" id="documents">
-
-    <h2 class="section-title">📂 TÀI LIỆU THAM KHẢO</h2>
-
-    <p class="description">
-        Tổng hợp các nguồn tài liệu hỗ trợ học tập và nghiên cứu.
-    </p>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>🌐 W3Schools</h3>
-            <p>Học HTML, CSS và JavaScript cơ bản.</p>
-            <a href="https://www.w3schools.com/" target="_blank">
-                Truy cập →
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>💻 GitHub</h3>
-            <p>Nền tảng lưu trữ và quản lý mã nguồn.</p>
-            <a href="https://github.com/" target="_blank">
-                Truy cập →
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>🤖 ChatGPT</h3>
-            <p>Hỗ trợ học tập và tìm hiểu công nghệ.</p>
-            <a href="https://chatgpt.com/" target="_blank">
-                Truy cập →
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>🎓 Google</h3>
-            <p>Tìm kiếm kiến thức và tài liệu học tập.</p>
-            <a href="https://www.google.com/" target="_blank">
-                Truy cập →
-            </a>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CHÂN TRANG -->
 <footer>
-    🌷 THƯ VIỆN SỐ CÁ NHÂN - BÙI MẠNH TRƯỜNG
-    <br>
-    MSSV: PK05092 | Chuyên ngành: Lập trình Web
-    <br>
-    Công nghệ Thông tin 4.0
-    <br>
-    © 2026 - Personal Digital Library
+THƯ VIỆN SỐ CÁ NHÂN - BÙI MẠNH TRƯỜNG<br>
+MSSV: PK05092 | Lập trình Web<br>
+© 2026
 </footer>
 
-<!-- CHỨC NĂNG GHI CHÚ -->
 <script>
+const data=[
+{
+title:"CMCN 4.0 và Chuyển đổi số",
+icon:"🌐",
+goal:"Hiểu được các cuộc cách mạng công nghiệp, khái niệm CMCN 4.0 và vai trò của chuyển đổi số.",
+topics:[
+["1. Các cuộc cách mạng công nghiệp","Cuộc cách mạng công nghiệp lần thứ nhất gắn với máy hơi nước và cơ giới hóa. Lần thứ hai gắn với điện năng và sản xuất hàng loạt. Lần thứ ba gắn với điện tử, máy tính và tự động hóa. Lần thứ tư gắn với công nghệ số, kết nối thông minh và dữ liệu."],
+["2. CMCN 4.0 là gì?","CMCN 4.0 là giai đoạn phát triển dựa trên sự kết hợp giữa công nghệ số, công nghệ vật lý và công nghệ sinh học. Những công nghệ tiêu biểu gồm AI, IoT, Big Data, Cloud Computing, robot và tự động hóa."],
+["3. Chuyển đổi số","Chuyển đổi số là quá trình ứng dụng công nghệ số và dữ liệu để thay đổi phương thức hoạt động, quản lý và cung cấp dịch vụ. Mục tiêu là nâng cao hiệu quả, trải nghiệm và tạo ra giá trị mới."],
+["4. Phân biệt số hóa và chuyển đổi số","Số hóa là chuyển thông tin giấy thành dữ liệu điện tử. Ví dụ quét tài liệu thành PDF. Chuyển đổi số rộng hơn, thay đổi cả quy trình và phương thức hoạt động dựa trên công nghệ."],
+["5. Ứng dụng trong đời sống","Giáo dục sử dụng lớp học trực tuyến và học liệu số. Y tế sử dụng hồ sơ điện tử. Ngân hàng sử dụng thanh toán trực tuyến. Giao thông sử dụng bản đồ số và hệ thống quản lý thông minh."],
+["6. Cơ hội và thách thức","Cơ hội gồm tăng năng suất, tiết kiệm thời gian và tạo ra nghề nghiệp mới. Thách thức gồm nguy cơ mất an toàn dữ liệu, lừa đảo trực tuyến, thiếu kỹ năng số và thay đổi yêu cầu việc làm."]
+],
+example:"Sinh viên có thể sử dụng Google Drive để lưu tài liệu, Google Meet để học trực tuyến và hệ thống quản lý học tập để nộp bài. Đây là những ví dụ ứng dụng công nghệ số trong giáo dục.",
+questions:[["CMCN 4.0 gắn liền với công nghệ nào?",["Máy hơi nước","AI và IoT","Động cơ đốt","Máy đánh chữ"],1],["Quét tài liệu giấy thành PDF là gì?",["Số hóa","Robot hóa","Tự động hóa","Lập trình"],0],["Chuyển đổi số hướng đến điều gì?",["Chỉ mua máy tính","Thay đổi quy trình bằng công nghệ và dữ liệu","Chỉ lưu tài liệu","Chỉ sử dụng Internet"],1]]
+},
+{
+title:"Thiết bị và phần cứng máy tính",icon:"🖥️",
+goal:"Nhận biết cấu tạo máy tính, chức năng các linh kiện và thông số cơ bản.",
+topics:[
+["1. Khái niệm phần cứng","Phần cứng là những bộ phận vật lý cấu thành máy tính như CPU, RAM, ổ cứng, màn hình, bàn phím và chuột."],
+["2. CPU","CPU là bộ xử lý trung tâm, thực hiện các phép tính và xử lý lệnh của chương trình. CPU ảnh hưởng lớn đến tốc độ xử lý của máy tính."],
+["3. RAM","RAM là bộ nhớ tạm thời lưu dữ liệu của chương trình đang chạy. Dung lượng RAM lớn hơn thường giúp máy chạy nhiều ứng dụng đồng thời thuận lợi hơn."],
+["4. Ổ cứng HDD và SSD","HDD lưu dữ liệu bằng đĩa từ. SSD sử dụng bộ nhớ flash, thường có tốc độ truy xuất nhanh hơn HDD. Cả hai đều dùng để lưu hệ điều hành, phần mềm và dữ liệu."],
+["5. Bo mạch chủ và nguồn","Bo mạch chủ kết nối các linh kiện trong máy tính. Bộ nguồn cung cấp điện cho các thành phần hoạt động."],
+["6. Thiết bị nhập và xuất","Thiết bị nhập gồm bàn phím, chuột, micro và máy quét. Thiết bị xuất gồm màn hình, máy in và loa."],
+["7. Chọn máy tính","Học tập văn phòng cần cấu hình vừa phải. Lập trình nên ưu tiên CPU, RAM và SSD phù hợp. Đồ họa và dựng phim có thể cần card đồ họa chuyên dụng."]
+],
+example:"Khi mở trình duyệt, CPU xử lý lệnh, RAM lưu dữ liệu đang hoạt động, SSD lưu phần mềm và màn hình hiển thị kết quả.",
+questions:[["CPU có chức năng gì?",["Lưu trữ lâu dài","Xử lý lệnh","Hiển thị hình ảnh","Nhập dữ liệu"],1],["RAM là bộ nhớ gì?",["Tạm thời","Quang học","Ngoài","Giấy"],0],["Thiết bị xuất là gì?",["Chuột","Bàn phím","Màn hình","Máy quét"],2]]
+},
+{
+title:"Hệ điều hành và phần mềm",icon:"⚙️",
+goal:"Hiểu vai trò hệ điều hành, phân loại phần mềm và quản lý tệp.",
+topics:[
+["1. Khái niệm hệ điều hành","Hệ điều hành là phần mềm hệ thống quản lý tài nguyên máy tính và tạo môi trường cho các ứng dụng hoạt động."],
+["2. Chức năng hệ điều hành","Quản lý CPU, bộ nhớ, thiết bị ngoại vi, tệp tin, tài khoản và cung cấp giao diện cho người dùng."],
+["3. Các hệ điều hành phổ biến","Windows thường dùng trên máy tính cá nhân. macOS được sử dụng trên máy Mac. Linux phổ biến trong máy chủ và môi trường phát triển. Android và iOS dùng trên thiết bị di động."],
+["4. Phần mềm hệ thống","Bao gồm hệ điều hành, trình điều khiển thiết bị và các tiện ích giúp máy tính vận hành."],
+["5. Phần mềm ứng dụng","Là phần mềm phục vụ công việc cụ thể như Word, Excel, PowerPoint, trình duyệt web và phần mềm thiết kế."],
+["6. Quản lý tệp","Tệp là đơn vị lưu trữ thông tin. Thư mục giúp sắp xếp các tệp theo chủ đề, môn học và dự án."],
+["7. Bảo trì hệ thống","Cần cập nhật phần mềm, sử dụng phần mềm đáng tin cậy, sao lưu dữ liệu và kiểm tra bảo mật."]
+],
+example:"Sinh viên có thể tạo thư mục CNTT4.0, bên trong có các thư mục Bai01, Bai02, TaiLieu và BaiTap để quản lý tài liệu học tập.",
+questions:[["Windows là gì?",["Hệ điều hành","Thiết bị nhập","Ổ cứng","Trình duyệt"],0],["Word thuộc loại nào?",["Phần cứng","Phần mềm ứng dụng","Bộ nhớ","Hệ điều hành"],1],["Thư mục dùng để làm gì?",["Sắp xếp tệp","Tăng CPU","Kết nối mạng","In tài liệu"],0]]
+},
+{
+title:"Mạng máy tính và Internet",icon:"📡",
+goal:"Hiểu mạng máy tính, thiết bị mạng và cách Internet hoạt động.",
+topics:[
+["1. Khái niệm mạng máy tính","Mạng máy tính là hệ thống các thiết bị được kết nối để trao đổi dữ liệu và chia sẻ tài nguyên."],
+["2. Mạng LAN","LAN là mạng cục bộ trong phạm vi nhỏ như nhà ở, trường học hoặc văn phòng."],
+["3. Mạng WAN","WAN kết nối các mạng trên phạm vi địa lý rộng. Internet là hệ thống mạng toàn cầu lớn nhất."],
+["4. Thiết bị mạng","Modem kết nối đường truyền Internet. Router định tuyến dữ liệu. Switch kết nối nhiều thiết bị trong mạng nội bộ. Access Point cung cấp kết nối Wi-Fi."],
+["5. Địa chỉ IP và DNS","IP định danh thiết bị trong mạng. DNS giúp chuyển tên miền thành địa chỉ IP để trình duyệt tìm máy chủ."],
+["6. Trình duyệt và website","Trình duyệt gửi yêu cầu đến máy chủ web. Máy chủ phản hồi dữ liệu để trình duyệt hiển thị nội dung trang web."],
+["7. An toàn Internet","Không chia sẻ mật khẩu, tránh đường link đáng ngờ, sử dụng HTTPS và bật xác thực nhiều lớp."]
+],
+example:"Khi truy cập một website, trình duyệt sử dụng DNS để tìm địa chỉ máy chủ, sau đó gửi yêu cầu và nhận nội dung trang web.",
+questions:[["LAN là mạng gì?",["Mạng cục bộ","Mạng toàn cầu","Mạng vệ tinh","Mạng xã hội"],0],["Thiết bị định tuyến là gì?",["Router","RAM","CPU","Máy in"],0],["DNS có chức năng gì?",["Chuyển tên miền thành IP","In tài liệu","Lưu hình ảnh","Chạy phần mềm"],0]]
+},
+{
+title:"Điện toán đám mây",icon:"☁️",
+goal:"Hiểu điện toán đám mây, mô hình dịch vụ và ứng dụng.",
+topics:[
+["1. Khái niệm","Điện toán đám mây là việc cung cấp tài nguyên máy tính qua Internet như lưu trữ, máy chủ, cơ sở dữ liệu và phần mềm."],
+["2. Đặc điểm","Người dùng có thể truy cập tài nguyên từ xa, mở rộng theo nhu cầu và sử dụng dịch vụ mà không cần tự xây dựng toàn bộ hạ tầng."],
+["3. IaaS","Infrastructure as a Service là mô hình cung cấp hạ tầng như máy chủ ảo, lưu trữ và mạng."],
+["4. PaaS","Platform as a Service cung cấp môi trường và nền tảng để phát triển, thử nghiệm và triển khai ứng dụng."],
+["5. SaaS","Software as a Service cung cấp phần mềm qua Internet. Ví dụ các dịch vụ email và ứng dụng văn phòng trực tuyến."],
+["6. Mô hình triển khai","Đám mây công cộng phục vụ nhiều khách hàng. Đám mây riêng dành cho một tổ chức. Đám mây lai kết hợp cả hai."],
+["7. Lợi ích và hạn chế","Lợi ích là linh hoạt, dễ mở rộng và hỗ trợ cộng tác. Hạn chế gồm phụ thuộc Internet, chi phí định kỳ và rủi ro bảo mật."]
+],
+example:"Google Drive cho phép lưu trữ và chia sẻ tài liệu trực tuyến. Sinh viên có thể truy cập tài liệu từ máy tính hoặc điện thoại.",
+questions:[["SaaS là gì?",["Phần mềm như một dịch vụ","Máy tính cá nhân","Thiết bị mạng","Bộ nhớ RAM"],0],["Google Drive là ví dụ về:",["Dịch vụ đám mây","CPU","Hệ điều hành","Thiết bị nhập"],0],["Một hạn chế của Cloud là:",["Phụ thuộc Internet","Không lưu được dữ liệu","Không chia sẻ được","Không có phần mềm"],0]]
+},
+{
+title:"Dữ liệu lớn Big Data",icon:"📊",
+goal:"Hiểu Big Data, đặc trưng 5V và ứng dụng phân tích dữ liệu.",
+topics:[
+["1. Khái niệm Big Data","Big Data là dữ liệu có quy mô, tốc độ phát sinh hoặc mức độ đa dạng lớn, cần phương pháp và công cụ phù hợp để lưu trữ và xử lý."],
+["2. Volume","Volume thể hiện khối lượng dữ liệu rất lớn được tạo ra từ nhiều nguồn."],
+["3. Velocity","Velocity thể hiện tốc độ dữ liệu được tạo ra, truyền tải và xử lý."],
+["4. Variety","Variety thể hiện sự đa dạng của dữ liệu như văn bản, hình ảnh, video và dữ liệu cảm biến."],
+["5. Veracity và Value","Veracity nói về độ tin cậy và chất lượng dữ liệu. Value nói về giá trị có thể khai thác từ dữ liệu."],
+["6. Quy trình xử lý","Thu thập dữ liệu, làm sạch, lưu trữ, xử lý, phân tích, trực quan hóa và sử dụng kết quả để hỗ trợ quyết định."],
+["7. Ứng dụng","Thương mại điện tử phân tích hành vi mua sắm. Giao thông phân tích lưu lượng. Giáo dục theo dõi tiến độ học tập."]
+],
+example:"Một cửa hàng trực tuyến phân tích đơn hàng để nhận biết sản phẩm được quan tâm nhiều, từ đó điều chỉnh kế hoạch nhập hàng.",
+questions:[["Volume có nghĩa là:",["Khối lượng dữ liệu","Tốc độ","Độ tin cậy","Giá trị"],0],["Variety nói về:",["Sự đa dạng dữ liệu","Tốc độ","Bảo mật","Dung lượng RAM"],0],["Big Data được dùng để:",["Phân tích dữ liệu","Thay thế Internet","Tăng kích thước màn hình","Sạc máy tính"],0]]
+},
+{
+title:"Trí tuệ nhân tạo AI",icon:"🤖",
+goal:"Hiểu AI, học máy, AI tạo sinh và sử dụng có trách nhiệm.",
+topics:[
+["1. Khái niệm AI","Trí tuệ nhân tạo là lĩnh vực tạo ra hệ thống có khả năng thực hiện những nhiệm vụ thường cần trí tuệ con người như nhận dạng, phân loại, dự đoán và xử lý ngôn ngữ."],
+["2. Học máy","Machine Learning là một nhánh của AI, cho phép máy tính học các mẫu từ dữ liệu để đưa ra dự đoán hoặc phân loại."],
+["3. Học sâu","Deep Learning sử dụng mạng nơ-ron nhiều lớp để xử lý những bài toán phức tạp như nhận dạng hình ảnh và giọng nói."],
+["4. AI tạo sinh","AI tạo sinh có thể tạo văn bản, hình ảnh, âm thanh hoặc mã lập trình dựa trên yêu cầu của người dùng."],
+["5. Ứng dụng","AI được sử dụng trong dịch thuật, trợ lý ảo, nhận diện hình ảnh, đề xuất nội dung và hỗ trợ phân tích dữ liệu."],
+["6. Hạn chế","AI có thể tạo thông tin không chính xác, phản ánh sai lệch trong dữ liệu hoặc không hiểu đầy đủ ngữ cảnh."],
+["7. Sử dụng có trách nhiệm","Cần kiểm tra thông tin, bảo vệ dữ liệu cá nhân, tôn trọng bản quyền và không phụ thuộc hoàn toàn vào kết quả AI."]
+],
+example:"Sinh viên có thể dùng AI để gợi ý dàn ý bài thuyết trình, nhưng cần kiểm tra lại thông tin và tự hoàn thiện nội dung.",
+questions:[["AI là viết tắt của:",["Artificial Intelligence","Automatic Internet","Advanced Input","Application Interface"],0],["Machine Learning là:",["Một nhánh của AI","Một thiết bị","Một hệ điều hành","Một loại mạng"],0],["Kết quả AI cần được:",["Kiểm chứng","Tin tuyệt đối","Sao chép ngay","Không cần đọc"],0]]
+},
+{
+title:"Internet vạn vật IoT và an toàn số",icon:"💡",
+goal:"Hiểu thiết bị kết nối, cảm biến và cách bảo vệ hệ thống IoT.",
+topics:[
+["1. Khái niệm IoT","Internet of Things là mạng lưới các thiết bị có cảm biến, phần mềm và kết nối mạng để thu thập và trao đổi dữ liệu."],
+["2. Thành phần IoT","Bao gồm cảm biến, thiết bị kết nối, mạng truyền dữ liệu, nền tảng xử lý và ứng dụng điều khiển."],
+["3. Nguyên lý hoạt động","Thiết bị thu thập dữ liệu, gửi qua mạng đến nền tảng xử lý, sau đó hiển thị kết quả hoặc thực hiện hành động theo cấu hình."],
+["4. Nhà thông minh","Đèn thông minh, camera, cảm biến chuyển động và điều hòa có thể được kết nối để hỗ trợ quản lý ngôi nhà."],
+["5. Nông nghiệp thông minh","Cảm biến theo dõi độ ẩm đất, nhiệt độ và môi trường để hỗ trợ điều chỉnh tưới tiêu."],
+["6. Công nghiệp thông minh","IoT hỗ trợ giám sát máy móc, theo dõi trạng thái thiết bị và phát hiện dấu hiệu bất thường."],
+["7. An toàn IoT","Cần đổi mật khẩu mặc định, cập nhật phần mềm, kiểm soát quyền truy cập và bảo vệ dữ liệu cá nhân."]
+],
+example:"Hệ thống tưới cây thông minh sử dụng cảm biến độ ẩm để theo dõi đất. Khi độ ẩm thấp hơn ngưỡng cài đặt, hệ thống có thể kích hoạt tưới.",
+questions:[["IoT là viết tắt của:",["Internet of Things","Input of Technology","Internal Online Tool","Internet Office"],0],["Thiết bị nào thu thập nhiệt độ?",["Cảm biến","Máy in","Bàn phím","Màn hình"],0],["Cách bảo vệ IoT là:",["Đổi mật khẩu mặc định","Chia sẻ mật khẩu","Không cập nhật","Mở quyền công khai"],0]]
+}
+];
 
-function saveNote() {
+const menu=document.getElementById("menu");
+const cards=document.getElementById("cards");
+const lessons=document.getElementById("lessons");
 
-    const note = document.getElementById("note").value;
-
-    try {
-        localStorage.setItem("ghiChuCaNhan", note);
-
-        document.getElementById("message").innerText =
-            "Đã lưu ghi chú thành công!";
-
-    } catch (error) {
-
-        document.getElementById("message").innerText =
-            "Không thể lưu ghi chú trên trình duyệt này.";
-
-    }
+function showLesson(n){
+ document.querySelectorAll(".lesson").forEach(x=>x.classList.remove("show"));
+ document.getElementById("lesson"+n).classList.add("show");
+ document.getElementById("catalog").scrollIntoView();
+ document.querySelectorAll("#menu button").forEach((b,i)=>b.classList.toggle("active",i===n));
 }
 
-function clearNote() {
+data.forEach((lesson,i)=>{
+ const b=document.createElement("button");
+ b.textContent="Bài "+(i+1);
+ b.onclick=()=>showLesson(i);
+ menu.appendChild(b);
 
-    document.getElementById("note").value = "";
+ cards.innerHTML+=`
+ <div class="card">
+ <h3>${lesson.icon} Bài ${i+1}: ${lesson.title}</h3>
+ <p>${lesson.goal}</p>
+ <button onclick="showLesson(${i})">Vào học bài →</button>
+ </div>`;
 
-    localStorage.removeItem("ghiChuCaNhan");
+ const topicHTML=lesson.topics.map(t=>`<h3>${t[0]}</h3><p>${t[1]}</p>`).join("");
+ const quizHTML=lesson.questions.map((q,j)=>`
+ <div class="question">
+ <b>Câu ${j+1}. ${q[0]}</b>
+ ${q[1].map((a,k)=>`<label><input type="radio" name="q${i}_${j}" value="${k}"> ${String.fromCharCode(65+k)}. ${a}</label>`).join("")}
+ <p id="answer${i}_${j}" class="result"></p>
+ </div>`).join("");
 
-    document.getElementById("message").innerText =
-        "Đã xóa ghi chú!";
+ lessons.innerHTML+=`
+ <section class="section lesson" id="lesson${i}">
+ <h2>${lesson.icon} BÀI ${i+1}: ${lesson.title.toUpperCase()}</h2>
+ <div class="callout"><b>🎯 Mục tiêu bài học:</b><br>${lesson.goal}</div>
+ <h3>📌 Nội dung trọng tâm</h3>
+ <div class="grid">${lesson.topics.map(t=>`<div class="card"><b>${t[0]}</b><p>${t[1].slice(0,115)}...</p></div>`).join("")}</div>
+ <h2>📖 KIẾN THỨC CHI TIẾT</h2>
+ ${topicHTML}
+ <div class="example"><b>💡 Ví dụ thực tế</b><br>${lesson.example}</div>
+ <h2>📝 CÂU HỎI ÔN TẬP</h2>
+ ${quizHTML}
+ <button onclick="checkAnswers(${i})">Kiểm tra đáp án</button>
+ <p id="score${i}" class="result"></p>
+ </section>`;
+});
 
+function checkAnswers(i){
+ let score=0;
+ data[i].questions.forEach((q,j)=>{
+ const chosen=document.querySelector(`input[name="q${i}_${j}"]:checked`);
+ const result=document.getElementById(`answer${i}_${j}`);
+ if(chosen && Number(chosen.value)===q[2]){
+ score++;result.textContent="✓ Chính xác";result.style.color="green";
+ }else{
+ result.textContent="✗ Đáp án đúng: "+String.fromCharCode(65+q[2]);
+ result.style.color="#d92b68";
+ }
+ });
+ document.getElementById("score"+i).textContent="Kết quả: "+score+"/"+data[i].questions.length+" câu đúng.";
 }
-
-window.onload = function() {
-
-    document.getElementById("note").value =
-        localStorage.getItem("ghiChuCaNhan") || "";
-
-};
 
 </script>
-
 </body>
 </html>
